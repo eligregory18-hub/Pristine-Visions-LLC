@@ -209,13 +209,15 @@ function Home() {
           </div>
           <div className="relative">
             <div className="absolute -left-4 -top-4 hidden h-full w-full border border-primary lg:block" />
-            <img
-              src={heroImg}
-              alt="Technician washing second-story windows with a water-fed pole"
-              width={1200}
-              height={1408}
-              className="relative w-full object-cover shadow-[var(--shadow-panel)]"
-            />
+            <div className="relative aspect-[4/5] overflow-hidden shadow-[var(--shadow-panel)]">
+              <img
+                src={heroImg}
+                alt="Technician washing second-story windows with a water-fed pole"
+                width={1200}
+                height={1408}
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
           </div>
         </div>
         <div className="relative border-y border-border bg-surface">
