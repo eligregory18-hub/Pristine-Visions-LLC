@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import heroImg from "@/assets/hero-window.jpg";
-import stripingImg from "@/assets/striping.jpg";
 import pressureImg from "@/assets/pressure.jpg";
 import screensImg from "@/assets/screens.jpg";
 import { QuoteForm } from "@/components/site/QuoteForm";
@@ -9,17 +8,17 @@ import { QuoteForm } from "@/components/site/QuoteForm";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "CGA Property Services — Window & Pressure Washing, McPherson KS" },
+      { title: "Pristine Visions LLC — Window & Pressure Washing, Lincoln & Omaha NE" },
       {
         name: "description",
         content:
-          "Locally owned window washing, pressure washing, parking lot striping and gutter cleaning in McPherson, Kansas. Free estimates, residential and commercial.",
+          "Locally owned window washing, pressure washing, screen cleaning and gutter cleaning in Lincoln & Omaha, NE and central Minnesota. Free estimates, residential and commercial.",
       },
-      { property: "og:title", content: "CGA Property Services — Your Property. Done Right." },
+      { property: "og:title", content: "Pristine Visions LLC — Your Property. Done Right." },
       {
         property: "og:description",
         content:
-          "Owner-operated window washing, pressure washing, striping and gutter cleaning serving McPherson and surrounding communities.",
+          "Owner-operated window washing, pressure washing, screen cleaning and gutter cleaning serving Lincoln & Omaha, NE and central Minnesota communities.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
