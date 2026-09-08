@@ -1,9 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import heroImg from "@/assets/hero-window.jpg";
-import pressureImg from "@/assets/pressure.jpg";
-import screensImg from "@/assets/screens.jpg";
+import logoAsset from "@/assets/logo.png.asset.json";
+import poleWashAsset from "@/assets/pole-wash.png.asset.json";
+import baWindowAsset from "@/assets/ba-window.png.asset.json";
+import baStairsAsset from "@/assets/ba-stairs.png.asset.json";
+import baPergolaAsset from "@/assets/ba-pergola.png.asset.json";
+import cleanGlassAsset from "@/assets/clean-glass.png.asset.json";
+import lakeHomeAsset from "@/assets/lake-home.png.asset.json";
+import baDeckAsset from "@/assets/ba-deck.png.asset.json";
+import baPictureWindowAsset from "@/assets/ba-picture-window.png.asset.json";
 import { QuoteForm } from "@/components/site/QuoteForm";
+
+const logoImg = logoAsset.url;
+const heroImg = poleWashAsset.url;
+const pressureImg = baDeckAsset.url;
+const screensImg = cleanGlassAsset.url;
+const FACEBOOK_URL = "https://www.facebook.com/PristineVisionsLLC";
+const GOOGLE_REVIEWS_URL =
+  "https://www.google.com/maps?q=Pristine+Visions+LLC&ftid=0x88cc843bac9a2af5:0x950bf54d3e94357a";
+
+const gallery = [
+  { src: baWindowAsset.url, alt: "Before and after window cleaning" },
+  { src: baDeckAsset.url, alt: "Before and after deck pressure washing" },
+  { src: baStairsAsset.url, alt: "Before and after stairway pressure washing" },
+  { src: baPictureWindowAsset.url, alt: "Before and after picture window cleaning" },
+  { src: baPergolaAsset.url, alt: "Before and after pergola pressure washing" },
+  { src: lakeHomeAsset.url, alt: "Cleaned windows on a lakeside home" },
+  { src: cleanGlassAsset.url, alt: "Spotless glass after cleaning" },
+  { src: poleWashAsset.url, alt: "Washing second-story windows with a water-fed pole" },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
