@@ -3,7 +3,6 @@ import { useState } from "react";
 const services = [
   "Window Washing",
   "Pressure Washing",
-  "Parking Lot Striping",
   "Gutter Cleaning",
   "Screen Cleaning",
   "Multiple Services",
@@ -21,7 +20,7 @@ export function QuoteForm() {
         <h3 className="text-3xl">Request received</h3>
         <p className="mt-3 text-sm text-muted-foreground">
           Thanks — we&apos;ll be in touch shortly, usually the same day. Need it faster? Call
-          620-755-5839.
+          (320) 200-9941.
         </p>
       </div>
     );
@@ -52,13 +51,13 @@ export function QuoteForm() {
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Phone Number
           </span>
-          <input required type="tel" className={field} placeholder="620-555-0100" name="phone" />
+          <input required type="tel" className={field} placeholder="320-200-9941" name="phone" />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             City
           </span>
-          <input required className={field} placeholder="McPherson" name="city" />
+          <input required className={field} placeholder="Lincoln" name="city" />
         </label>
         <label className="block sm:col-span-2">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
@@ -89,7 +88,7 @@ export function QuoteForm() {
       </div>
 
       <label className="mt-5 flex gap-3 text-xs leading-relaxed text-muted-foreground">
-        <input type="checkbox" className="mt-1 size-4 accent-[oklch(0.66_0.18_258)]" />
+        <input type="checkbox" className="mt-1 size-4 accent-[#B38228]" />
         <span>
           <strong className="text-foreground">(Optional)</strong> I agree to receive text messages
           about my quote, appointment confirmations, and service reminders. Consent is not required
@@ -107,12 +106,8 @@ export function QuoteForm() {
 
       <p className="mt-4 text-center text-sm text-muted-foreground">
         Or call/text us directly:{" "}
-        <a className="text-primary hover:underline" href="tel:6207555839">
-          Colt — 620-755-5839
-        </a>{" "}
-        |{" "}
-        <a className="text-primary hover:underline" href="tel:6207558318">
-          Ace — 620-755-8318
+        <a className="text-primary hover:underline" href="tel:3202009941">
+          (320) 200-9941
         </a>
       </p>
     </form>

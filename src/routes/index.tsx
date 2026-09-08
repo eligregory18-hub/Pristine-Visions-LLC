@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import heroImg from "@/assets/hero-window.jpg";
-import stripingImg from "@/assets/striping.jpg";
 import pressureImg from "@/assets/pressure.jpg";
 import screensImg from "@/assets/screens.jpg";
 import { QuoteForm } from "@/components/site/QuoteForm";
@@ -9,17 +8,17 @@ import { QuoteForm } from "@/components/site/QuoteForm";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "CGA Property Services — Window & Pressure Washing, McPherson KS" },
+      { title: "Pristine Visions LLC — Window & Pressure Washing, Lincoln & Omaha NE" },
       {
         name: "description",
         content:
-          "Locally owned window washing, pressure washing, parking lot striping and gutter cleaning in McPherson, Kansas. Free estimates, residential and commercial.",
+          "Locally owned window washing, pressure washing, screen cleaning and gutter cleaning in Lincoln & Omaha, NE and central Minnesota. Free estimates, residential and commercial.",
       },
-      { property: "og:title", content: "CGA Property Services — Your Property. Done Right." },
+      { property: "og:title", content: "Pristine Visions LLC — Your Property. Done Right." },
       {
         property: "og:description",
         content:
-          "Owner-operated window washing, pressure washing, striping and gutter cleaning serving McPherson and surrounding communities.",
+          "Owner-operated window washing, pressure washing, screen cleaning and gutter cleaning serving Lincoln & Omaha, NE and central Minnesota communities.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -45,20 +44,13 @@ const services = [
   },
   {
     n: "02",
-    title: "Parking Lot Line Striping",
-    img: stripingImg,
-    body: "Sharp striping for businesses, banks and commercial lots. Clean lines, correct spacing and ADA markings that make a property look cared for.",
-    tags: ["Commercial", "ADA Markings", "Drone Documented"],
-  },
-  {
-    n: "03",
     title: "Pressure Washing",
     img: pressureImg,
     body: "Years of grime lifted off driveways, patios, siding and brick with a 4400 PSI commercial-grade machine. Big difference in a single visit.",
     tags: ["Driveways", "Siding", "Patios", "Brick"],
   },
   {
-    n: "04",
+    n: "03",
     title: "Screen Cleaning & Gutters",
     img: screensImg,
     body: "We remove, deep clean and reinstall every screen, then clear gutters so water flows freely. Often bundled with window washing.",
@@ -80,18 +72,18 @@ const reasons = [
   {
     icon: "⚡",
     title: "Fast, Reliable & Local",
-    body: "Based in McPherson. We know the area, we show up when we say we will, and we keep you in the loop from quote to cleanup.",
+    body: "Based in Lincoln & Omaha, NE. We know the area, we show up when we say we will, and we keep you in the loop from quote to cleanup.",
   },
 ];
 
 const areas = [
-  "McPherson",
-  "Hutchinson",
-  "Newton",
-  "Lindsborg",
-  "Salina",
-  "Moundridge",
-  "Canton",
+  "Lincoln",
+  "Omaha",
+  "Spicer",
+  "New London",
+  "Alexandria",
+  "Sauk Center",
+  "Willmar",
   "Surrounding Areas",
 ];
 
@@ -111,9 +103,9 @@ function Home() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/85 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
           <a href="#top" className="font-display text-3xl leading-none tracking-wider">
-            CGA<span className="text-primary">.</span>
+            Pristine<span className="text-primary">.</span>
             <span className="ml-2 align-middle text-[0.6rem] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-              Property Services
+              Visions LLC
             </span>
           </a>
           <nav className="hidden items-center gap-7 text-xs font-semibold uppercase tracking-[0.16em] lg:flex">
@@ -122,8 +114,8 @@ function Home() {
                 {i.label}
               </a>
             ))}
-            <a href="tel:6207555839" className="text-primary">
-              620-755-5839
+            <a href="tel:3202009941" className="text-primary">
+              (320) 200-9941
             </a>
             <a
               href="#quote"
@@ -152,7 +144,7 @@ function Home() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:py-28">
           <div>
             <span className="inline-block bg-primary px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-primary-foreground">
-              McPherson, KS · Locally Owned
+              Lincoln & Omaha, NE · Locally Owned
             </span>
             <h1 className="mt-6 text-6xl sm:text-7xl lg:text-8xl">
               Your Property.
@@ -161,7 +153,7 @@ function Home() {
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
               Owner-operated by a local team that shows up on time, works hard, and treats every
-              property like our own. Window washing, pressure washing, parking lot striping and
+              property like our own. Window washing, pressure washing, screen cleaning and
               gutter cleaning — residential and commercial.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -172,10 +164,10 @@ function Home() {
                 Get a Free Quote
               </a>
               <a
-                href="tel:6207555839"
+                href="tel:3202009941"
                 className="rounded-sm border border-border px-7 py-4 font-display text-xl tracking-wide hover:bg-surface"
               >
-                Call 620-755-5839
+                Call (320) 200-9941
               </a>
             </div>
             <dl className="mt-12 grid max-w-lg grid-cols-3 border-y border-border">
@@ -260,12 +252,12 @@ function Home() {
           <p className="eyebrow">Real Results</p>
           <h2 className="mt-3 text-5xl sm:text-6xl">Our Work</h2>
           <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
-            {[heroImg, stripingImg, pressureImg, screensImg, stripingImg, heroImg, pressureImg, screensImg].map(
+            {[heroImg, pressureImg, screensImg, heroImg, pressureImg, screensImg, heroImg, pressureImg].map(
               (img, i) => (
                 <img
                   key={i}
                   src={img}
-                  alt="Recent CGA Property Services job"
+                  alt="Recent Pristine Visions LLC job"
                   loading="lazy"
                   width={1200}
                   height={900}
@@ -295,7 +287,7 @@ function Home() {
             </div>
           </div>
           <div>
-            <p className="eyebrow">Why CGA</p>
+            <p className="eyebrow">Why Pristine Visions</p>
             <h2 className="mt-3 text-5xl sm:text-6xl">
               Reliable, <span className="text-primary">Professional</span> & Local
             </h2>
@@ -322,8 +314,7 @@ function Home() {
           <p className="eyebrow">Where We Work</p>
           <h2 className="mt-3 text-5xl sm:text-6xl">Service Area</h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Serving McPherson and all surrounding communities. Not sure if we cover your area? Give
-            us a call and we&apos;ll let you know.
+            Serving in Lincoln & Omaha NE, MN: Spicer, New London, Alexandria, Sauk Center, Willmar, and surrounding communities. Not sure if we cover your area? Give us a call and we&apos;ll let you know.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {areas.map((a) => (
@@ -357,11 +348,11 @@ function Home() {
       <footer className="border-t border-border bg-surface py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 text-xs text-muted-foreground sm:flex-row">
           <p className="font-display text-2xl tracking-wider text-foreground">
-            CGA<span className="text-primary">.</span> Property Services
+            Pristine<span className="text-primary">.</span> Visions LLC
           </p>
-          <p>McPherson, Kansas · Licensed & Insured</p>
-          <a href="tel:6207555839" className="text-primary">
-            620-755-5839
+          <p>Lincoln & Omaha, NE · Licensed & Insured</p>
+          <a href="tel:3202009941" className="text-primary">
+            (320) 200-9941
           </a>
         </div>
       </footer>
