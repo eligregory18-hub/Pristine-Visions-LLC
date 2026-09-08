@@ -25,9 +25,6 @@ const gallery = [
   { src: baStairsAsset.url, alt: "Before and after stairway pressure washing" },
   { src: baPictureWindowAsset.url, alt: "Before and after picture window cleaning" },
   { src: baPergolaAsset.url, alt: "Before and after pergola pressure washing" },
-  { src: lakeHomeAsset.url, alt: "Cleaned windows on a lakeside home" },
-  { src: cleanGlassAsset.url, alt: "Spotless glass after cleaning" },
-  { src: poleWashAsset.url, alt: "Washing second-story windows with a water-fed pole" },
 ];
 
 export const Route = createFileRoute("/")({
@@ -212,13 +209,15 @@ function Home() {
           </div>
           <div className="relative">
             <div className="absolute -left-4 -top-4 hidden h-full w-full border border-primary lg:block" />
-            <img
-              src={heroImg}
-              alt="Technician washing second-story windows with a water-fed pole"
-              width={1200}
-              height={1408}
-              className="relative w-full object-cover shadow-[var(--shadow-panel)]"
-            />
+            <div className="relative aspect-[4/5] overflow-hidden shadow-[var(--shadow-panel)]">
+              <img
+                src={heroImg}
+                alt="Technician washing second-story windows with a water-fed pole"
+                width={1200}
+                height={1408}
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
           </div>
         </div>
         <div className="relative border-y border-border bg-surface">
@@ -278,13 +277,14 @@ function Home() {
           <h2 className="mt-3 text-5xl sm:text-6xl">Before &amp; After</h2>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((g) => (
-              <img
-                key={g.src}
-                src={g.src}
-                alt={g.alt}
-                loading="lazy"
-                className="w-full rounded-sm border border-border object-cover"
-              />
+              <div key={g.src} className="aspect-[4/3] overflow-hidden rounded-sm border border-border bg-background">
+                <img
+                  src={g.src}
+                  alt={g.alt}
+                  loading="lazy"
+                  className="h-full w-full object-contain object-center"
+                />
+              </div>
             ))}
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
@@ -312,14 +312,16 @@ function Home() {
       <section id="about" className="mx-auto max-w-7xl px-5 py-24">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="relative">
-            <img
-              src={heroImg}
-              alt="Cleaning commercial windows with a water-fed pole system"
-              loading="lazy"
-              width={1200}
-              height={1408}
-              className="w-full rounded-sm object-cover"
-            />
+            <div className="aspect-[4/5] overflow-hidden rounded-sm">
+              <img
+                src={lakeHomeAsset.url}
+                alt="Clean windows on a modern lakeside home"
+                loading="lazy"
+                width={1200}
+                height={900}
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
             <div className="absolute -bottom-6 -right-4 bg-primary px-6 py-4 text-primary-foreground">
               <p className="font-display text-4xl leading-none">100%</p>
               <p className="text-[0.66rem] font-bold uppercase tracking-[0.2em]">Locally Owned</p>
