@@ -44,20 +44,13 @@ const services = [
   },
   {
     n: "02",
-    title: "Parking Lot Line Striping",
-    img: stripingImg,
-    body: "Sharp striping for businesses, banks and commercial lots. Clean lines, correct spacing and ADA markings that make a property look cared for.",
-    tags: ["Commercial", "ADA Markings", "Drone Documented"],
-  },
-  {
-    n: "03",
     title: "Pressure Washing",
     img: pressureImg,
     body: "Years of grime lifted off driveways, patios, siding and brick with a 4400 PSI commercial-grade machine. Big difference in a single visit.",
     tags: ["Driveways", "Siding", "Patios", "Brick"],
   },
   {
-    n: "04",
+    n: "03",
     title: "Screen Cleaning & Gutters",
     img: screensImg,
     body: "We remove, deep clean and reinstall every screen, then clear gutters so water flows freely. Often bundled with window washing.",
