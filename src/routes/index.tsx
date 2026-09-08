@@ -25,9 +25,6 @@ const gallery = [
   { src: baStairsAsset.url, alt: "Before and after stairway pressure washing" },
   { src: baPictureWindowAsset.url, alt: "Before and after picture window cleaning" },
   { src: baPergolaAsset.url, alt: "Before and after pergola pressure washing" },
-  { src: lakeHomeAsset.url, alt: "Cleaned windows on a lakeside home" },
-  { src: cleanGlassAsset.url, alt: "Spotless glass after cleaning" },
-  { src: poleWashAsset.url, alt: "Washing second-story windows with a water-fed pole" },
 ];
 
 export const Route = createFileRoute("/")({
