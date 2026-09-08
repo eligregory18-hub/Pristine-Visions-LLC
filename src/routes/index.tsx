@@ -252,12 +252,12 @@ function Home() {
           <p className="eyebrow">Real Results</p>
           <h2 className="mt-3 text-5xl sm:text-6xl">Our Work</h2>
           <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
-            {[heroImg, stripingImg, pressureImg, screensImg, stripingImg, heroImg, pressureImg, screensImg].map(
+            {[heroImg, pressureImg, screensImg, heroImg, pressureImg, screensImg, heroImg, pressureImg].map(
               (img, i) => (
                 <img
                   key={i}
                   src={img}
-                  alt="Recent CGA Property Services job"
+                  alt="Recent Pristine Visions LLC job"
                   loading="lazy"
                   width={1200}
                   height={900}
