@@ -103,9 +103,9 @@ function Home() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/85 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
           <a href="#top" className="font-display text-3xl leading-none tracking-wider">
-            CGA<span className="text-primary">.</span>
+            Pristine<span className="text-primary">.</span>
             <span className="ml-2 align-middle text-[0.6rem] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-              Property Services
+              Visions LLC
             </span>
           </a>
           <nav className="hidden items-center gap-7 text-xs font-semibold uppercase tracking-[0.16em] lg:flex">
@@ -114,8 +114,8 @@ function Home() {
                 {i.label}
               </a>
             ))}
-            <a href="tel:6207555839" className="text-primary">
-              620-755-5839
+            <a href="tel:3202009941" className="text-primary">
+              (320) 200-9941
             </a>
             <a
               href="#quote"
@@ -144,7 +144,7 @@ function Home() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:py-28">
           <div>
             <span className="inline-block bg-primary px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-primary-foreground">
-              McPherson, KS · Locally Owned
+              Lincoln & Omaha, NE · Locally Owned
             </span>
             <h1 className="mt-6 text-6xl sm:text-7xl lg:text-8xl">
               Your Property.
@@ -153,7 +153,7 @@ function Home() {
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
               Owner-operated by a local team that shows up on time, works hard, and treats every
-              property like our own. Window washing, pressure washing, parking lot striping and
+              property like our own. Window washing, pressure washing, screen cleaning and
               gutter cleaning — residential and commercial.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -164,10 +164,10 @@ function Home() {
                 Get a Free Quote
               </a>
               <a
-                href="tel:6207555839"
+                href="tel:3202009941"
                 className="rounded-sm border border-border px-7 py-4 font-display text-xl tracking-wide hover:bg-surface"
               >
-                Call 620-755-5839
+                Call (320) 200-9941
               </a>
             </div>
             <dl className="mt-12 grid max-w-lg grid-cols-3 border-y border-border">
