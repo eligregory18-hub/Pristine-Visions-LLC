@@ -72,18 +72,18 @@ const reasons = [
   {
     icon: "⚡",
     title: "Fast, Reliable & Local",
-    body: "Based in McPherson. We know the area, we show up when we say we will, and we keep you in the loop from quote to cleanup.",
+    body: "Based in Lincoln & Omaha, NE. We know the area, we show up when we say we will, and we keep you in the loop from quote to cleanup.",
   },
 ];
 
 const areas = [
-  "McPherson",
-  "Hutchinson",
-  "Newton",
-  "Lindsborg",
-  "Salina",
-  "Moundridge",
-  "Canton",
+  "Lincoln",
+  "Omaha",
+  "Spicer",
+  "New London",
+  "Alexandria",
+  "Sauk Center",
+  "Willmar",
   "Surrounding Areas",
 ];
 
