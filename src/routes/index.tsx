@@ -61,18 +61,18 @@ const services = [
 const reasons = [
   {
     icon: "🪟",
-    title: "Purified Water System",
-    body: "A water-fed pole system running 0 TDS purified water — no chemicals, no residue, no streaks, the same setup used by top window cleaners nationwide.",
+    title: "Pure Water. Spotless Results.",
+    body: "We use a professional water-fed pole system with 0 TDS purified water, allowing us to clean your windows without harsh chemicals, soap, or residue. The result? Crystal clear glass with no streaks or water spots.",
   },
   {
-    icon: "🏆",
-    title: "Owner-Operated Every Job",
-    body: "No crew of strangers. An owner is on site for every job, so our reputation is on the line each time we pull up.",
+    icon: "👋",
+    title: "Owner-Operated",
+    body: "When you book with us, you’re not getting a random crew. The owner is personally involved in every job, ensuring the work meets our standards from start to finish. Your satisfaction, and our reputation, matters every time we show up.",
   },
   {
-    icon: "⚡",
-    title: "Fast, Reliable & Local",
-    body: "Based in Lincoln & Omaha, NE. We know the area, we show up when we say we will, and we keep you in the loop from quote to cleanup.",
+    icon: "🌟",
+    title: "Local, Reliable & Easy to Work With",
+    body: "Proudly serving our local communities. We show up on time ready to go, communicate throughout the process, and leave your property looking better than we found it. Professional service you can trust without a hassle.",
   },
 ];
 
@@ -103,10 +103,7 @@ function Home() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/85 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
           <a href="#top" className="font-display text-3xl leading-none tracking-wider">
-            Pristine<span className="text-primary">.</span>
-            <span className="ml-2 align-middle text-[0.6rem] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-              Visions LLC
-            </span>
+            Pristine Visions LLC
           </a>
           <nav className="hidden items-center gap-7 text-xs font-semibold uppercase tracking-[0.16em] lg:flex">
             {nav.map((i) => (
@@ -144,7 +141,7 @@ function Home() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:py-28">
           <div>
             <span className="inline-block bg-primary px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-primary-foreground">
-              Lincoln & Omaha, NE · Locally Owned
+              Student Owned · Local · Reliable
             </span>
             <h1 className="mt-6 text-6xl sm:text-7xl lg:text-8xl">
               Your Property.
@@ -314,7 +311,7 @@ function Home() {
           <p className="eyebrow">Where We Work</p>
           <h2 className="mt-3 text-5xl sm:text-6xl">Service Area</h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Serving in Lincoln & Omaha NE, MN: Spicer, New London, Alexandria, Sauk Center, Willmar, and surrounding communities. Not sure if we cover your area? Give us a call and we&apos;ll let you know.
+            Serving in Lincoln, NE | Omaha, NE | Spicer, MN | New London, MN | Alexandria, MN | Sauk Center, MN | Willmar, MN | and surrounding communities. Not sure if we cover your area? Give us a call and we&apos;ll let you know.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {areas.map((a) => (
