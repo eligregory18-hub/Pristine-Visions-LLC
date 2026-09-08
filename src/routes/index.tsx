@@ -287,7 +287,7 @@ function Home() {
             </div>
           </div>
           <div>
-            <p className="eyebrow">Why CGA</p>
+            <p className="eyebrow">Why Pristine Visions</p>
             <h2 className="mt-3 text-5xl sm:text-6xl">
               Reliable, <span className="text-primary">Professional</span> & Local
             </h2>
@@ -314,8 +314,7 @@ function Home() {
           <p className="eyebrow">Where We Work</p>
           <h2 className="mt-3 text-5xl sm:text-6xl">Service Area</h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Serving McPherson and all surrounding communities. Not sure if we cover your area? Give
-            us a call and we&apos;ll let you know.
+            Serving in Lincoln & Omaha NE, MN: Spicer, New London, Alexandria, Sauk Center, Willmar, and surrounding communities. Not sure if we cover your area? Give us a call and we&apos;ll let you know.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {areas.map((a) => (
@@ -349,11 +348,11 @@ function Home() {
       <footer className="border-t border-border bg-surface py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 text-xs text-muted-foreground sm:flex-row">
           <p className="font-display text-2xl tracking-wider text-foreground">
-            CGA<span className="text-primary">.</span> Property Services
+            Pristine<span className="text-primary">.</span> Visions LLC
           </p>
-          <p>McPherson, Kansas · Licensed & Insured</p>
-          <a href="tel:6207555839" className="text-primary">
-            620-755-5839
+          <p>Lincoln & Omaha, NE · Licensed & Insured</p>
+          <a href="tel:3202009941" className="text-primary">
+            (320) 200-9941
           </a>
         </div>
       </footer>
