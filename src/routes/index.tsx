@@ -127,8 +127,11 @@ function Home() {
       {/* Header */}
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/85 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
-          <a href="#top" className="font-display text-3xl leading-none tracking-wider">
-            Pristine Visions LLC
+          <a href="#top" className="flex items-center gap-3">
+            <img src={logoImg} alt="Pristine Visions LLC logo" className="h-11 w-auto" />
+            <span className="font-display text-3xl leading-none tracking-wider">
+              Pristine Visions LLC
+            </span>
           </a>
           <nav className="hidden items-center gap-7 text-xs font-semibold uppercase tracking-[0.16em] lg:flex">
             {nav.map((i) => (
@@ -272,21 +275,35 @@ function Home() {
       <section id="work" className="border-y border-border bg-surface py-24">
         <div className="mx-auto max-w-7xl px-5">
           <p className="eyebrow">Real Results</p>
-          <h2 className="mt-3 text-5xl sm:text-6xl">Our Work</h2>
-          <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
-            {[heroImg, pressureImg, screensImg, heroImg, pressureImg, screensImg, heroImg, pressureImg].map(
-              (img, i) => (
-                <img
-                  key={i}
-                  src={img}
-                  alt="Recent Pristine Visions LLC job"
-                  loading="lazy"
-                  width={1200}
-                  height={900}
-                  className={`w-full rounded-sm object-cover ${i % 3 === 0 ? "aspect-[3/4]" : "aspect-square"}`}
-                />
-              ),
-            )}
+          <h2 className="mt-3 text-5xl sm:text-6xl">Before &amp; After</h2>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {gallery.map((g) => (
+              <img
+                key={g.src}
+                src={g.src}
+                alt={g.alt}
+                loading="lazy"
+                className="w-full rounded-sm border border-border object-cover"
+              />
+            ))}
+          </div>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <a
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-sm bg-primary px-6 py-3 font-display text-xl tracking-wide text-primary-foreground"
+            >
+              ★ Read Our Google Reviews
+            </a>
+            <a
+              href={FACEBOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-sm border border-border px-6 py-3 font-display text-xl tracking-wide hover:bg-surface-2"
+            >
+              Follow Us on Facebook
+            </a>
           </div>
         </div>
       </section>
@@ -369,13 +386,24 @@ function Home() {
 
       <footer className="border-t border-border bg-surface py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 text-xs text-muted-foreground sm:flex-row">
-          <p className="font-display text-2xl tracking-wider text-foreground">
-            Pristine<span className="text-primary">.</span> Visions LLC
-          </p>
+          <div className="flex items-center gap-3">
+            <img src={logoImg} alt="Pristine Visions LLC logo" className="h-10 w-auto" />
+            <p className="font-display text-2xl tracking-wider text-foreground">
+              Pristine Visions LLC
+            </p>
+          </div>
           <p>Lincoln & Omaha, NE · Licensed & Insured</p>
-          <a href="tel:3202009941" className="text-primary">
-            (320) 200-9941
-          </a>
+          <div className="flex items-center gap-5">
+            <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
+              Facebook
+            </a>
+            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
+              Google Reviews
+            </a>
+            <a href="tel:3202009941" className="text-primary">
+              (320) 200-9941
+            </a>
+          </div>
         </div>
       </footer>
     </div>
