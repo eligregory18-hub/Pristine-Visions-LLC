@@ -312,14 +312,16 @@ function Home() {
       <section id="about" className="mx-auto max-w-7xl px-5 py-24">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="relative">
-            <img
-              src={heroImg}
-              alt="Cleaning commercial windows with a water-fed pole system"
-              loading="lazy"
-              width={1200}
-              height={1408}
-              className="w-full rounded-sm object-cover"
-            />
+            <div className="aspect-[4/5] overflow-hidden rounded-sm">
+              <img
+                src={lakeHomeAsset.url}
+                alt="Clean windows on a modern lakeside home"
+                loading="lazy"
+                width={1200}
+                height={900}
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
             <div className="absolute -bottom-6 -right-4 bg-primary px-6 py-4 text-primary-foreground">
               <p className="font-display text-4xl leading-none">100%</p>
               <p className="text-[0.66rem] font-bold uppercase tracking-[0.2em]">Locally Owned</p>
