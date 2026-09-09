@@ -5,7 +5,7 @@ import poleWashAsset from "@/assets/pole-wash.png.asset.json";
 import baWindowAsset from "@/assets/ba-window.png.asset.json";
 import baStairsAsset from "@/assets/ba-stairs.png.asset.json";
 import baPergolaAsset from "@/assets/ba-pergola.png.asset.json";
-import cleanGlassAsset from "@/assets/clean-glass.png.asset.json";
+
 import lakeHomeAsset from "@/assets/lake-home.png.asset.json";
 import baDeckAsset from "@/assets/ba-deck.png.asset.json";
 import baPictureWindowAsset from "@/assets/ba-picture-window.png.asset.json";
@@ -151,20 +151,6 @@ const faqs = [
   },
 ];
 
-const recommendations = [
-  {
-    name: "Sarah M.",
-    text: "Pristine Visions did an amazing job on our windows. They were on time, professional, and the glass has never looked better. Highly recommend!",
-  },
-  {
-    name: "Mike T.",
-    text: "Great communication from start to finish. Our deck and driveway look brand new after the pressure washing. Will definitely book again.",
-  },
-  {
-    name: "Jennifer L.",
-    text: "Owner-operated and it shows. Careful, thorough, and fairly priced. Already scheduled our next cleaning.",
-  },
-];
 
 function Home() {
   return (
@@ -354,26 +340,7 @@ function Home() {
             </a>
           </div>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {recommendations.map((r) => (
-              <div
-                key={r.name}
-                className="panel rounded-sm border border-border p-6"
-              >
-                <div className="flex items-center gap-1 text-primary">
-                  {"★★★★★".split("").map((star, i) => (
-                    <span key={i}>{star}</span>
-                  ))}
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  &ldquo;{r.text}&rdquo;
-                </p>
-                <p className="mt-4 text-xs font-semibold uppercase tracking-widest text-foreground">
-                  — {r.name}
-                </p>
-              </div>
-            ))}
-          </div>
+          <ReviewsCarousel />
         </div>
       </section>
 
