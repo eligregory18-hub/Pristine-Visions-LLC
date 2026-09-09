@@ -240,8 +240,8 @@ function Home() {
 
       {/* Services */}
       <section id="services" className="mx-auto max-w-7xl px-5 py-24">
-        <p className="eyebrow">What We Do</p>
-        <h2 className="mt-3 text-5xl sm:text-6xl">Our Services</h2>
+        <h2 className="text-5xl sm:text-6xl">Our Services</h2>
+        <p className="eyebrow mt-4 text-[0.8rem]">Residential & Commercial</p>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {services.map((s) => (
             <article key={s.n} className="panel group overflow-hidden rounded-sm">
