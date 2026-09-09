@@ -78,6 +78,13 @@ const services = [
     body: "We remove, deep clean and reinstall every screen, then clear gutters so water flows freely. Often bundled with window washing.",
     tags: ["Screen Removal", "Deep Clean", "Gutter Clearing"],
   },
+  {
+    n: "04",
+    title: "Ceramic Window Coating",
+    img: baPictureWindowAsset.url,
+    body: "We use a hydrophobic coating that bonds to your glass. This will reduce & repel rain, hard water, and stains while helping protect your windows against buildup and long-term damage, lasting up to 12 months.",
+    tags: ["Exterior Window", "Hydrophobic Coating", "Bundle with Window Cleaning"],
+  },
 ];
 
 const reasons = [
@@ -233,8 +240,8 @@ function Home() {
 
       {/* Services */}
       <section id="services" className="mx-auto max-w-7xl px-5 py-24">
-        <p className="eyebrow">What We Do</p>
-        <h2 className="mt-3 text-5xl sm:text-6xl">Our Services</h2>
+        <h2 className="text-5xl sm:text-6xl">Our Services</h2>
+        <p className="eyebrow mt-4 text-[0.8rem]">Residential & Commercial</p>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {services.map((s) => (
             <article key={s.n} className="panel group overflow-hidden rounded-sm">
