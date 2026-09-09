@@ -54,6 +54,7 @@ const nav = [
   { label: "Our Work", href: "#work" },
   { label: "About", href: "#about" },
   { label: "Service Area", href: "#area" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 const services = [
