@@ -437,6 +437,32 @@ function Home() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faq" className="mx-auto max-w-3xl px-5 py-24">
+        <div className="text-center">
+          <p className="eyebrow">Questions & Answers</p>
+          <h2 className="mt-3 text-5xl sm:text-6xl">Frequently Asked Questions</h2>
+        </div>
+        <div className="mt-12 space-y-4">
+          {faqs.map((faq) => (
+            <details
+              key={faq.q}
+              className="group panel rounded-sm border border-border bg-surface open:bg-background"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between p-5 font-display text-lg tracking-wide text-foreground">
+                {faq.q}
+                <span className="ml-4 text-primary transition-transform group-open:rotate-180">
+                  ▼
+                </span>
+              </summary>
+              <div className="border-t border-border px-5 pb-5 pt-3 text-sm leading-relaxed text-muted-foreground">
+                {faq.a}
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
       {/* Quote */}
       <section id="quote" className="mx-auto max-w-3xl px-5 py-24">
         <div className="text-center">
