@@ -351,6 +351,27 @@ function Home() {
               Follow Us on Facebook
             </a>
           </div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {recommendations.map((r) => (
+              <div
+                key={r.name}
+                className="panel rounded-sm border border-border p-6"
+              >
+                <div className="flex items-center gap-1 text-primary">
+                  {"★★★★★".split("").map((star, i) => (
+                    <span key={i}>{star}</span>
+                  ))}
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  &ldquo;{r.text}&rdquo;
+                </p>
+                <p className="mt-4 text-xs font-semibold uppercase tracking-widest text-foreground">
+                  — {r.name}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
