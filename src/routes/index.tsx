@@ -126,6 +126,44 @@ const badges = [
   "Streak-Free Guarantee",
 ];
 
+const faqs = [
+  {
+    q: "How do you clean windows without leaving streaks?",
+    a: "We use a professional water-fed pole system with 0 TDS purified water. No soap, no chemicals, no residue — just spotless, streak-free glass that dries crystal clear.",
+  },
+  {
+    q: "Do you offer free estimates?",
+    a: "Yes. Every quote request is free, with no obligation. Just fill out the form or call/text us at (320) 200-9941 and we'll get back to you quickly, usually the same day.",
+  },
+  {
+    q: "What areas do you serve?",
+    a: "We serve Lincoln, NE | Omaha, NE | Spicer, MN | New London, MN | Alexandria, MN | Sauk Center, MN | Willmar, MN and surrounding communities. Not sure if we cover your area? Give us a call.",
+  },
+  {
+    q: "Is Ceramic Window Coating worth it?",
+    a: "Absolutely. Our hydrophobic coating bonds to exterior glass and helps repel rain, hard water, and stains for up to 12 months. It's a great add-on with any window cleaning.",
+  },
+  {
+    q: "Do you do commercial work?",
+    a: "Yes. We handle both residential and commercial properties, from single-family homes to storefronts and office buildings.",
+  },
+];
+
+const recommendations = [
+  {
+    name: "Sarah M.",
+    text: "Pristine Visions did an amazing job on our windows. They were on time, professional, and the glass has never looked better. Highly recommend!",
+  },
+  {
+    name: "Mike T.",
+    text: "Great communication from start to finish. Our deck and driveway look brand new after the pressure washing. Will definitely book again.",
+  },
+  {
+    name: "Jennifer L.",
+    text: "Owner-operated and it shows. Careful, thorough, and fairly priced. Already scheduled our next cleaning.",
+  },
+];
+
 function Home() {
   return (
     <div className="min-h-screen bg-background">
