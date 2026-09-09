@@ -81,7 +81,7 @@ const services = [
   {
     n: "04",
     title: "Ceramic Window Coating",
-    img: screensImg,
+    img: baPictureWindowAsset.url,
     body: "We use a hydrophobic coating that bonds to your glass. This will reduce & repel rain, hard water, and stains while helping protect your windows against buildup and long-term damage, lasting up to 12 months.",
     tags: ["Exterior Window", "Hydrophobic Coating", "Bundle with Window Cleaning"],
   },
