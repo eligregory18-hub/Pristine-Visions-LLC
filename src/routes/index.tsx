@@ -78,6 +78,13 @@ const services = [
     body: "We remove, deep clean and reinstall every screen, then clear gutters so water flows freely. Often bundled with window washing.",
     tags: ["Screen Removal", "Deep Clean", "Gutter Clearing"],
   },
+  {
+    n: "04",
+    title: "Ceramic Window Coating",
+    img: screensImg,
+    body: "We use a hydrophobic coating that bonds to your glass. This will reduce & repel rain, hard water, and stains while helping protect your windows against buildup and long-term damage, lasting up to 12 months.",
+    tags: ["Exterior Window", "Hydrophobic Coating", "Bundle with Window Cleaning"],
+  },
 ];
 
 const reasons = [
