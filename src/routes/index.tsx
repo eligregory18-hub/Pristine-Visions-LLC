@@ -54,6 +54,7 @@ const nav = [
   { label: "Our Work", href: "#work" },
   { label: "About", href: "#about" },
   { label: "Service Area", href: "#area" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 const services = [
@@ -123,6 +124,44 @@ const badges = [
   "Residential & Commercial",
   "Purified Water System",
   "Streak-Free Guarantee",
+];
+
+const faqs = [
+  {
+    q: "How do you clean windows without leaving streaks?",
+    a: "We use a professional water-fed pole system with 0 TDS purified water. No soap, no chemicals, no residue — just spotless, streak-free glass that dries crystal clear.",
+  },
+  {
+    q: "Do you offer free estimates?",
+    a: "Yes. Every quote request is free, with no obligation. Just fill out the form or call/text us at (320) 200-9941 and we'll get back to you quickly, usually the same day.",
+  },
+  {
+    q: "What areas do you serve?",
+    a: "We serve Lincoln, NE | Omaha, NE | Spicer, MN | New London, MN | Alexandria, MN | Sauk Center, MN | Willmar, MN and surrounding communities. Not sure if we cover your area? Give us a call.",
+  },
+  {
+    q: "Is Ceramic Window Coating worth it?",
+    a: "Absolutely. Our hydrophobic coating bonds to exterior glass and helps repel rain, hard water, and stains for up to 12 months. It's a great add-on with any window cleaning.",
+  },
+  {
+    q: "Do you do commercial work?",
+    a: "Yes. We handle both residential and commercial properties, from single-family homes to storefronts and office buildings.",
+  },
+];
+
+const recommendations = [
+  {
+    name: "Sarah M.",
+    text: "Pristine Visions did an amazing job on our windows. They were on time, professional, and the glass has never looked better. Highly recommend!",
+  },
+  {
+    name: "Mike T.",
+    text: "Great communication from start to finish. Our deck and driveway look brand new after the pressure washing. Will definitely book again.",
+  },
+  {
+    name: "Jennifer L.",
+    text: "Owner-operated and it shows. Careful, thorough, and fairly priced. Already scheduled our next cleaning.",
+  },
 ];
 
 function Home() {
@@ -312,6 +351,27 @@ function Home() {
               Follow Us on Facebook
             </a>
           </div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {recommendations.map((r) => (
+              <div
+                key={r.name}
+                className="panel rounded-sm border border-border p-6"
+              >
+                <div className="flex items-center gap-1 text-primary">
+                  {"★★★★★".split("").map((star, i) => (
+                    <span key={i}>{star}</span>
+                  ))}
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  &ldquo;{r.text}&rdquo;
+                </p>
+                <p className="mt-4 text-xs font-semibold uppercase tracking-widest text-foreground">
+                  — {r.name}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -374,6 +434,32 @@ function Home() {
               </span>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="mx-auto max-w-3xl px-5 py-24">
+        <div className="text-center">
+          <p className="eyebrow">Questions & Answers</p>
+          <h2 className="mt-3 text-5xl sm:text-6xl">Frequently Asked Questions</h2>
+        </div>
+        <div className="mt-12 space-y-4">
+          {faqs.map((faq) => (
+            <details
+              key={faq.q}
+              className="group panel rounded-sm border border-border bg-surface open:bg-background"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between p-5 font-display text-lg tracking-wide text-foreground">
+                {faq.q}
+                <span className="ml-4 text-primary transition-transform group-open:rotate-180">
+                  ▼
+                </span>
+              </summary>
+              <div className="border-t border-border px-5 pb-5 pt-3 text-sm leading-relaxed text-muted-foreground">
+                {faq.a}
+              </div>
+            </details>
+          ))}
         </div>
       </section>
 
