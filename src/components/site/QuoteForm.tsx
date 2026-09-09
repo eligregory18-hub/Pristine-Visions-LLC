@@ -5,6 +5,7 @@ const services = [
   "Pressure Washing",
   "Gutter Cleaning",
   "Screen Cleaning",
+  "Ceramic Window Coating",
   "Multiple Services",
 ];
 
