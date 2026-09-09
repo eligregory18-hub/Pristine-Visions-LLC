@@ -9,12 +9,14 @@ import cleanGlassAsset from "@/assets/clean-glass.png.asset.json";
 import lakeHomeAsset from "@/assets/lake-home.png.asset.json";
 import baDeckAsset from "@/assets/ba-deck.png.asset.json";
 import baPictureWindowAsset from "@/assets/ba-picture-window.png.asset.json";
+import screensGuttersAsset from "@/assets/screens-gutters.png.asset.json";
 import { QuoteForm } from "@/components/site/QuoteForm";
+import { ReviewsCarousel } from "@/components/site/ReviewsCarousel";
 
 const logoImg = logoAsset.url;
 const heroImg = poleWashAsset.url;
 const pressureImg = baDeckAsset.url;
-const screensImg = cleanGlassAsset.url;
+const screensImg = screensGuttersAsset.url;
 const FACEBOOK_URL = "https://www.facebook.com/PristineVisionsLLC";
 const GOOGLE_REVIEWS_URL =
   "https://www.google.com/search?kgmid=/g/11nqy0khb8&q=Pristine+Visions+LLC";
