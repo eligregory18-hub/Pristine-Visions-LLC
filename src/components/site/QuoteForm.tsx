@@ -3,8 +3,7 @@ import { useState } from "react";
 const services = [
   "Window Washing",
   "Pressure Washing",
-  "Gutter Cleaning",
-  "Screen Cleaning",
+  "Screen & Gutter Cleaning",
   "Ceramic Window Coating",
   "Multiple Services",
 ];
@@ -14,6 +13,8 @@ const field =
 
 export function QuoteForm() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   if (sent) {
     return (
@@ -30,11 +31,38 @@ export function QuoteForm() {
   return (
     <form
       className="panel rounded-sm p-6 sm:p-8"
-      onSubmit={(e) => {
+      action="https://formspree.io/f/xbgjqqkb"
+      method="POST"
+      onSubmit={async (e) => {
         e.preventDefault();
-        setSent(true);
+        const form = e.currentTarget;
+        setSending(true);
+        setError("");
+
+        try {
+          const response = await fetch("https://formspree.io/f/xbgjqqkb", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+            },
+            body: new FormData(form),
+          });
+
+          if (!response.ok) {
+            throw new Error("Form submission failed");
+          }
+
+          setSent(true);
+        } catch {
+          setError(
+            "We couldn't send your request right now. Please call (320) 200-9941 instead.",
+          );
+        } finally {
+          setSending(false);
+        }
       }}
     >
+      <input type="hidden" name="_subject" value="New Pristine Visions quote request" />
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
@@ -89,21 +117,33 @@ export function QuoteForm() {
       </div>
 
       <label className="mt-5 flex gap-3 text-xs leading-relaxed text-muted-foreground">
-        <input type="checkbox" className="mt-1 size-4 accent-[#B38228]" />
+        <input
+          type="checkbox"
+          className="mt-1 size-4 accent-[#c98c1a]"
+          name="sms-consent"
+          value="yes"
+        />
         <span>
           <strong className="text-foreground">(Optional)</strong> I agree to receive text messages
-          about my quote, appointment confirmations, and service reminders. Consent is not required
-          to get a quote. Message frequency varies; message and data rates may apply. Reply STOP to
-          opt out.
+          with (320) 200-9941 about my quote, appointment confirmations, and service reminders.
+          Consent is not required to get a quote. Message frequency varies; message and data rates
+          may apply. Reply STOP to opt out.
         </span>
       </label>
 
       <button
         type="submit"
+        disabled={sending}
         className="mt-6 w-full rounded-sm bg-primary px-6 py-4 font-display text-xl tracking-wide text-primary-foreground transition-transform hover:-translate-y-0.5"
       >
-        Submit Quote Request
+        {sending ? "Sending..." : "Submit Quote Request"}
       </button>
+
+      {error && (
+        <p role="alert" className="mt-4 text-center text-sm text-destructive">
+          {error}
+        </p>
+      )}
 
       <p className="mt-4 text-center text-sm text-muted-foreground">
         Or call/text us directly:{" "}
