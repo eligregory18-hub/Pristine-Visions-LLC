@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import logoAsset from "@/assets/logo.png.asset.json";
 import poleWashAsset from "@/assets/pole-wash.png.asset.json";
 import baWindowAsset from "@/assets/ba-window.png.asset.json";
 import baStairsAsset from "@/assets/ba-stairs.png.asset.json";
@@ -11,7 +12,7 @@ import baPictureWindowAsset from "@/assets/ba-picture-window.png.asset.json";
 import { QuoteForm } from "@/components/site/QuoteForm";
 import { ReviewsCarousel } from "@/components/site/ReviewsCarousel";
 
-const logoImg = "/pristine-visions-logo.png";
+const logoImg = logoAsset.url;
 const heroImg = poleWashAsset.url;
 const pressureImg = baDeckAsset.url;
 const gutterCleaningImg = "/gutter-cleaning.png";
@@ -157,9 +158,7 @@ function Home() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/85 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
           <a href="#top" className="flex items-center gap-3">
-            <span className="flex size-11 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white p-1">
-              <img src={logoImg} alt="Pristine Visions LLC logo" className="size-full rounded-full object-contain" />
-            </span>
+            <img src={logoImg} alt="Pristine Visions LLC logo" className="h-11 w-auto" />
             <span className="font-display text-3xl leading-none tracking-wider">
               Pristine Visions LLC
             </span>
@@ -288,7 +287,7 @@ function Home() {
               <div className="p-7">
                 <h3 className="text-3xl">{s.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-                <div className="mt-5 flex flex-wrap justify-center gap-2">
+                <div className="mt-5 flex flex-wrap gap-2">
                   {s.tags.map((t) => (
                     <span
                       key={t}
@@ -454,9 +453,7 @@ function Home() {
       <footer className="border-t border-border bg-surface py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 text-xs text-muted-foreground sm:flex-row">
           <div className="flex items-center gap-3">
-            <span className="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white p-1">
-              <img src={logoImg} alt="Pristine Visions LLC logo" className="size-full rounded-full object-contain" />
-            </span>
+            <img src={logoImg} alt="Pristine Visions LLC logo" className="h-10 w-auto" />
             <p className="font-display text-2xl tracking-wider text-foreground">
               Pristine Visions LLC
             </p>
