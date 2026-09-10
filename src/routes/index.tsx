@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import logoAsset from "@/assets/logo.png.asset.json";
 import poleWashAsset from "@/assets/pole-wash.png.asset.json";
 import baWindowAsset from "@/assets/ba-window.png.asset.json";
 import baStairsAsset from "@/assets/ba-stairs.png.asset.json";
@@ -12,7 +11,7 @@ import baPictureWindowAsset from "@/assets/ba-picture-window.png.asset.json";
 import { QuoteForm } from "@/components/site/QuoteForm";
 import { ReviewsCarousel } from "@/components/site/ReviewsCarousel";
 
-const logoImg = logoAsset.url;
+const logoImg = "/pristine-visions-logo.png";
 const heroImg = poleWashAsset.url;
 const pressureImg = baDeckAsset.url;
 const gutterCleaningImg = "/gutter-cleaning.png";
@@ -158,7 +157,11 @@ function Home() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/85 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
           <a href="#top" className="flex items-center gap-3">
-            <img src={logoImg} alt="Pristine Visions LLC logo" className="h-11 w-auto" />
+            <img
+              src={logoImg}
+              alt="Pristine Visions LLC logo"
+              className="size-11 rounded-full bg-white object-contain p-1"
+            />
             <span className="font-display text-3xl leading-none tracking-wider">
               Pristine Visions LLC
             </span>
@@ -453,7 +456,11 @@ function Home() {
       <footer className="border-t border-border bg-surface py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 text-xs text-muted-foreground sm:flex-row">
           <div className="flex items-center gap-3">
-            <img src={logoImg} alt="Pristine Visions LLC logo" className="h-10 w-auto" />
+            <img
+              src={logoImg}
+              alt="Pristine Visions LLC logo"
+              className="size-10 rounded-full bg-white object-contain p-1"
+            />
             <p className="font-display text-2xl tracking-wider text-foreground">
               Pristine Visions LLC
             </p>
