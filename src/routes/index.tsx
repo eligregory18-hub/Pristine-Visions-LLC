@@ -9,7 +9,6 @@ import baPergolaAsset from "@/assets/ba-pergola.png.asset.json";
 import lakeHomeAsset from "@/assets/lake-home.png.asset.json";
 import baDeckAsset from "@/assets/ba-deck.png.asset.json";
 import baPictureWindowAsset from "@/assets/ba-picture-window.png.asset.json";
-import screensGuttersAsset from "@/assets/screens-gutters.png.asset.json";
 import { QuoteForm } from "@/components/site/QuoteForm";
 import { ReviewsCarousel } from "@/components/site/ReviewsCarousel";
 
@@ -69,7 +68,7 @@ const services = [
   },
   {
     n: "02",
-    title: "Pressure Washing",
+    title: "Pressure Washing & Soft Washing",
     img: pressureImg,
     body: "Years of grime lifted off driveways, patios, siding and brick with a 4400 PSI commercial-grade machine. Big difference in a single visit.",
     tags: ["Driveways", "Siding", "Patios", "Brick"],
@@ -242,7 +241,7 @@ function Home() {
             </dl>
           </div>
           <div className="relative">
-            <div className="absolute -left-4 -top-4 hidden h-full w-full border border-primary lg:block" />
+            <div className="absolute -inset-4 hidden border border-primary lg:block" />
             <div className="relative aspect-[4/5] overflow-hidden shadow-[var(--shadow-panel)]">
               <img
                 src={heroImg}
@@ -279,9 +278,7 @@ function Home() {
                   loading="lazy"
                   width={1200}
                   height={900}
-                  className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${
-                    s.title === "Screen & Gutter Cleaning" ? "bg-surface-2 object-contain" : "object-cover"
-                  }`}
+                  className="h-full w-full bg-background object-contain object-center transition-transform duration-500 group-hover:scale-105"
                 />
                 <span className="absolute left-0 top-0 bg-primary px-3 py-1.5 font-display text-lg text-primary-foreground">
                   {s.n}
@@ -313,7 +310,10 @@ function Home() {
           <h2 className="mt-3 text-5xl sm:text-6xl">Before &amp; After</h2>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((g) => (
-              <div key={g.src} className="aspect-[4/3] overflow-hidden rounded-sm border border-border bg-background">
+              <div
+                key={g.src}
+                className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-sm border border-border bg-background"
+              >
                 <img
                   src={g.src}
                   alt={g.alt}
