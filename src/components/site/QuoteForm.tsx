@@ -3,8 +3,7 @@ import { useState } from "react";
 const services = [
   "Window Washing",
   "Pressure Washing",
-  "Gutter Cleaning",
-  "Screen Cleaning",
+  "Screen & Gutter Cleaning",
   "Ceramic Window Coating",
   "Multiple Services",
 ];
@@ -14,6 +13,16 @@ const field =
 
 export function QuoteForm() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const formatPhone = (value: string) => {
+    const digits = value.replace(/\D/g, "").slice(0, 10);
+    if (digits.length <= 3) return digits;
+    if (digits.length <= 6) return `${digits.slice(0, 3)}-${digits.slice(3)}`;
+    return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
+  };
 
   if (sent) {
     return (
@@ -30,41 +39,81 @@ export function QuoteForm() {
   return (
     <form
       className="panel rounded-sm p-6 sm:p-8"
-      onSubmit={(e) => {
+      action="https://formspree.io/f/xbgjqqkb"
+      method="POST"
+      onSubmit={async (e) => {
         e.preventDefault();
-        setSent(true);
+        const form = e.currentTarget;
+        setSending(true);
+        setError("");
+
+        try {
+          const response = await fetch("https://formspree.io/f/xbgjqqkb", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+            },
+            body: new FormData(form),
+          });
+
+          if (!response.ok) {
+            throw new Error("Form submission failed");
+          }
+
+          setSent(true);
+        } catch {
+          setError(
+            "We couldn't send your request right now. Please call (320) 200-9941 instead.",
+          );
+        } finally {
+          setSending(false);
+        }
       }}
     >
+      <input type="hidden" name="_subject" value="New Pristine Visions quote request" />
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             First Name
           </span>
-          <input required className={field} placeholder="Jane" name="first" />
+          <input required aria-required="true" className={field} placeholder="Jane" name="first" />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Last Name
           </span>
-          <input required className={field} placeholder="Doe" name="last" />
+          <input required aria-required="true" className={field} placeholder="Doe" name="last" />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Phone Number
           </span>
-          <input required type="tel" className={field} placeholder="320-200-9941" name="phone" />
+          <input
+            required
+            aria-required="true"
+            type="tel"
+            inputMode="numeric"
+            autoComplete="tel"
+            maxLength={12}
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            className={field}
+            placeholder="320-200-9941"
+            name="phone"
+            value={phone}
+            onChange={(e) => setPhone(formatPhone(e.target.value))}
+          />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             City
           </span>
-          <input required className={field} placeholder="Lincoln" name="city" />
+          <input required aria-required="true" className={field} placeholder="Lincoln" name="city" />
         </label>
         <label className="block sm:col-span-2">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Service Needed
           </span>
-          <select required className={field} name="service" defaultValue="">
+          <select required aria-required="true" className={field} name="service" defaultValue="">
             <option value="" disabled>
               Select a service...
             </option>
@@ -89,21 +138,33 @@ export function QuoteForm() {
       </div>
 
       <label className="mt-5 flex gap-3 text-xs leading-relaxed text-muted-foreground">
-        <input type="checkbox" className="mt-1 size-4 accent-[#B38228]" />
+        <input
+          type="checkbox"
+          className="mt-1 size-4 accent-[#c98c1a]"
+          name="sms-consent"
+          value="yes"
+        />
         <span>
           <strong className="text-foreground">(Optional)</strong> I agree to receive text messages
-          about my quote, appointment confirmations, and service reminders. Consent is not required
-          to get a quote. Message frequency varies; message and data rates may apply. Reply STOP to
-          opt out.
+          with (320) 200-9941 about my quote, appointment confirmations, and service reminders.
+          Consent is not required to get a quote. Message frequency varies; message and data rates
+          may apply. Reply STOP to opt out.
         </span>
       </label>
 
       <button
         type="submit"
+        disabled={sending}
         className="mt-6 w-full rounded-sm bg-primary px-6 py-4 font-display text-xl tracking-wide text-primary-foreground transition-transform hover:-translate-y-0.5"
       >
-        Submit Quote Request
+        {sending ? "Sending..." : "Submit Quote Request"}
       </button>
+
+      {error && (
+        <p role="alert" className="mt-4 text-center text-sm text-destructive">
+          {error}
+        </p>
+      )}
 
       <p className="mt-4 text-center text-sm text-muted-foreground">
         Or call/text us directly:{" "}

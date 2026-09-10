@@ -47,7 +47,7 @@
   --popover: #071F42;
   --popover-foreground: #FFFFFF;
 
-  --primary: #B38228;
+  --primary: #c98c1a;
   --primary-foreground: #000000;
 
   --secondary: #0A2856;
@@ -56,7 +56,7 @@
   --muted: #0A2856;
   --muted-foreground: #CFCFCF;
 
-  --accent: #B38228;
+  --accent: #c98c1a;
   --accent-foreground: #000000;
 
   --destructive: oklch(0.6 0.22 27);
@@ -64,7 +64,7 @@
 
   --border: rgb(255 255 255 / 12%);
   --input: rgb(255 255 255 / 16%);
-  --ring: #B38228;
+  --ring: #c98c1a;
 
   --font-display: "Bebas Neue", "Arial Narrow", sans-serif;
   --font-body: "Barlow", system-ui, sans-serif;
@@ -76,7 +76,7 @@
     rgba(0, 0, 0, 0.72) 100%
   );
   --shadow-panel: 0 24px 60px -24px rgba(0, 0, 0, 0.75);
-  --shadow-glow: 0 0 0 1px rgba(179, 130, 40, 0.35), 0 18px 50px -20px rgba(179, 130, 40, 0.5);
+  --shadow-glow: 0 0 0 1px rgba(201, 140, 26, 0.35), 0 18px 50px -20px rgba(201, 140, 26, 0.5);
 }
 
 @layer base {

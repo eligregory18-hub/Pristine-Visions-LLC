@@ -16,10 +16,10 @@ import { ReviewsCarousel } from "@/components/site/ReviewsCarousel";
 const logoImg = logoAsset.url;
 const heroImg = poleWashAsset.url;
 const pressureImg = baDeckAsset.url;
-const screensImg = screensGuttersAsset.url;
+const gutterCleaningImg = "/gutter-cleaning.png";
 const FACEBOOK_URL = "https://www.facebook.com/PristineVisionsLLC";
 const GOOGLE_REVIEWS_URL =
-  "https://www.google.com/search?kgmid=/g/11nqy0khb8&q=Pristine+Visions+LLC";
+  "https://www.google.com/maps/search/?api=1&query=Pristine+Visions+LLC";
 
 const gallery = [
   { src: baWindowAsset.url, alt: "Before and after window cleaning" },
@@ -76,8 +76,8 @@ const services = [
   },
   {
     n: "03",
-    title: "Screen Cleaning & Gutters",
-    img: screensImg,
+    title: "Screen & Gutter Cleaning",
+    img: gutterCleaningImg,
     body: "We remove, deep clean and reinstall every screen, then clear gutters so water flows freely. Often bundled with window washing.",
     tags: ["Screen Removal", "Deep Clean", "Gutter Clearing"],
   },
@@ -279,7 +279,9 @@ function Home() {
                   loading="lazy"
                   width={1200}
                   height={900}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${
+                    s.title === "Screen & Gutter Cleaning" ? "bg-surface-2 object-contain" : "object-cover"
+                  }`}
                 />
                 <span className="absolute left-0 top-0 bg-primary px-3 py-1.5 font-display text-lg text-primary-foreground">
                   {s.n}
