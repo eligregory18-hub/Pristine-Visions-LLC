@@ -15,6 +15,14 @@ export function QuoteForm() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const formatPhone = (value: string) => {
+    const digits = value.replace(/\D/g, "").slice(0, 10);
+    if (digits.length <= 3) return digits;
+    if (digits.length <= 6) return `${digits.slice(0, 3)}-${digits.slice(3)}`;
+    return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
+  };
 
   if (sent) {
     return (
@@ -84,9 +92,15 @@ export function QuoteForm() {
             required
             aria-required="true"
             type="tel"
+            inputMode="numeric"
+            autoComplete="tel"
+            maxLength={12}
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             className={field}
             placeholder="320-200-9941"
             name="phone"
+            value={phone}
+            onChange={(e) => setPhone(formatPhone(e.target.value))}
           />
         </label>
         <label className="block">
