@@ -9,7 +9,6 @@ import baPergolaAsset from "@/assets/ba-pergola.png.asset.json";
 import lakeHomeAsset from "@/assets/lake-home.png.asset.json";
 import baDeckAsset from "@/assets/ba-deck.png.asset.json";
 import baPictureWindowAsset from "@/assets/ba-picture-window.png.asset.json";
-import screensGuttersAsset from "@/assets/screens-gutters.png.asset.json";
 import { QuoteForm } from "@/components/site/QuoteForm";
 import { ReviewsCarousel } from "@/components/site/ReviewsCarousel";
 
@@ -279,9 +278,7 @@ function Home() {
                   loading="lazy"
                   width={1200}
                   height={900}
-                  className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${
-                    s.title === "Screen & Gutter Cleaning" ? "bg-surface-2 object-contain" : "object-cover"
-                  }`}
+                  className="h-full w-full bg-surface-2 object-contain object-center transition-transform duration-500 group-hover:scale-105"
                 />
                 <span className="absolute left-0 top-0 bg-primary px-3 py-1.5 font-display text-lg text-primary-foreground">
                   {s.n}
