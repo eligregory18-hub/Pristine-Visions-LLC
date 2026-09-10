@@ -80,6 +80,11 @@
 }
 
 @layer base {
+  #lovable-badge,
+  [data-lovable-badge] {
+    display: none !important;
+  }
+
   * {
     border-color: var(--color-border);
   }
