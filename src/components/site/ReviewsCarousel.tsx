@@ -3,14 +3,6 @@ import { useServerFn } from "@tanstack/react-start";
 
 import { getGoogleReviews, type PublicReview } from "@/lib/reviews.functions";
 
-const reviewProfilePhotos: Record<string, string> = {
-  "Abby Thurston": "/reviews/abby-thurston.png",
-  "Kevin Sheehan": "/reviews/kevin-sheehan.png",
-  "Ray Yakimchuk": "/reviews/ray-yakimchuk.png",
-  "Jayne Solberg": "/reviews/jayne-solberg.png",
-  "Scott Haala": "/reviews/scott-haala.png",
-};
-
 const fallbackReviews: PublicReview[] = [
   {
     author: "Abby Thurston",
@@ -65,14 +57,12 @@ function initials(name: string) {
 }
 
 function ReviewCard({ review }: { review: PublicReview }) {
-  const photoUrl = reviewProfilePhotos[review.author] ?? review.photoUrl;
-
   return (
     <article className="panel w-[85vw] max-w-sm shrink-0 snap-start rounded-sm border border-border p-6 sm:w-[22rem]">
       <div className="flex items-center gap-3">
-        {photoUrl ? (
+        {review.photoUrl ? (
           <img
-            src={photoUrl}
+            src={review.photoUrl}
             alt={review.author}
             loading="lazy"
             className="size-11 rounded-full object-cover object-left"
