@@ -68,7 +68,7 @@ const services = [
   },
   {
     n: "02",
-    title: "Pressure Washing",
+    title: "Pressure Washing & Soft Washing",
     img: pressureImg,
     body: "Years of grime lifted off driveways, patios, siding and brick with a 4400 PSI commercial-grade machine. Big difference in a single visit.",
     tags: ["Driveways", "Siding", "Patios", "Brick"],
