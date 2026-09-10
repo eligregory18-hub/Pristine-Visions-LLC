@@ -64,7 +64,7 @@ const services = [
     title: "Pressure Washing & Soft Washing",
     img: pressureImg,
     body: "Years of grime lifted off driveways, patios, siding and brick with a 4400 PSI commercial-grade machine. Big difference in a single visit.",
-    tags: ["Driveways", "Siding", "Patios", "Brick"],
+    tags: ["Driveways", "Siding", "Patios", "Brick", "Decks"],
   },
   {
     n: "03",
@@ -318,7 +318,7 @@ function Home() {
                   {s.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-sm bg-surface-2 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+                      className="rounded-sm border border-primary bg-surface-2 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
                     >
                       {t}
                     </span>
@@ -426,7 +426,7 @@ function Home() {
             {areas.map((a) => (
               <span
                 key={a}
-                className="rounded-sm border border-border bg-background px-5 py-3 font-display text-xl tracking-wide"
+                className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide"
               >
                 {a}
               </span>
@@ -445,7 +445,7 @@ function Home() {
           {faqs.map((faq) => (
             <details
               key={faq.q}
-              className="group panel rounded-sm border border-border bg-surface open:bg-background"
+              className="group panel rounded-sm border border-primary bg-surface open:bg-background"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between p-5 font-display text-lg tracking-wide text-foreground">
                 {faq.q}
