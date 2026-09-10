@@ -275,7 +275,7 @@ function Home() {
         <p className="eyebrow mt-4 text-[0.8rem]">Residential & Commercial</p>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {services.map((s) => (
-            <article key={s.n} className="panel group overflow-hidden rounded-sm">
+            <article key={s.n} className="panel group overflow-hidden rounded-sm text-center">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={s.img}
