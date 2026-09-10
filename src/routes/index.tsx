@@ -252,13 +252,13 @@ function Home() {
                 Call (320) 200-9941
               </a>
             </div>
-            <dl className="mt-12 grid max-w-lg grid-cols-3 gap-3">
+            <dl className="mt-12 grid max-w-lg grid-cols-3 border-y border-border">
               {[
                 ["5★", "Satisfaction"],
                 ["Free", "Estimates"],
                 ["Local", "Owner-Operated"],
               ].map(([big, small]) => (
-                <div key={small} className="rounded-sm !border !border-primary px-4 py-5">
+                <div key={small} className="border-l border-border px-4 py-5 first:border-l-0">
                   <dt className="font-display text-3xl text-primary">{big}</dt>
                   <dd className="text-[0.68rem] uppercase tracking-[0.18em] text-muted-foreground">
                     {small}
