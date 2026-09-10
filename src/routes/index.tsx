@@ -310,7 +310,10 @@ function Home() {
           <h2 className="mt-3 text-5xl sm:text-6xl">Before &amp; After</h2>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((g) => (
-              <div key={g.src} className="aspect-[4/3] overflow-hidden rounded-sm border border-border bg-background">
+              <div
+                key={g.src}
+                className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-sm border border-border bg-background"
+              >
                 <img
                   src={g.src}
                   alt={g.alt}
