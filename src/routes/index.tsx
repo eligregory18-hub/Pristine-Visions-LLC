@@ -241,8 +241,8 @@ function Home() {
             </dl>
           </div>
           <div className="relative">
-            <div className="absolute -inset-4 hidden border border-primary lg:block" />
-            <div className="relative aspect-[4/5] overflow-hidden shadow-[var(--shadow-panel)]">
+            <div className="absolute -inset-2 hidden border border-primary lg:block" />
+            <div className="relative aspect-[5/4] overflow-hidden shadow-[var(--shadow-panel)]">
               <img
                 src={heroImg}
                 alt="Technician washing second-story windows with a water-fed pole"
@@ -265,7 +265,7 @@ function Home() {
       </section>
 
       {/* Services */}
-      <section id="services" className="mx-auto max-w-7xl px-5 py-24">
+      <section id="services" className="mx-auto max-w-7xl px-5 py-24 text-center">
         <h2 className="text-5xl sm:text-6xl">Our Services</h2>
         <p className="eyebrow mt-4 text-[0.8rem]">Residential & Commercial</p>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -306,8 +306,8 @@ function Home() {
       {/* Work */}
       <section id="work" className="border-y border-border bg-surface py-24">
         <div className="mx-auto max-w-7xl px-5">
-          <p className="eyebrow">Real Results</p>
-          <h2 className="mt-3 text-5xl sm:text-6xl">Before &amp; After</h2>
+          <p className="eyebrow text-center">Real Results</p>
+          <h2 className="mt-3 text-center text-5xl sm:text-6xl">Before &amp; After</h2>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((g) => (
               <div
