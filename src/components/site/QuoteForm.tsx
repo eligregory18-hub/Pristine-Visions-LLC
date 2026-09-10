@@ -68,31 +68,38 @@ export function QuoteForm() {
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             First Name
           </span>
-          <input required className={field} placeholder="Jane" name="first" />
+          <input required aria-required="true" className={field} placeholder="Jane" name="first" />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Last Name
           </span>
-          <input required className={field} placeholder="Doe" name="last" />
+          <input required aria-required="true" className={field} placeholder="Doe" name="last" />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Phone Number
           </span>
-          <input required type="tel" className={field} placeholder="320-200-9941" name="phone" />
+          <input
+            required
+            aria-required="true"
+            type="tel"
+            className={field}
+            placeholder="320-200-9941"
+            name="phone"
+          />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             City
           </span>
-          <input required className={field} placeholder="Lincoln" name="city" />
+          <input required aria-required="true" className={field} placeholder="Lincoln" name="city" />
         </label>
         <label className="block sm:col-span-2">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Service Needed
           </span>
-          <select required className={field} name="service" defaultValue="">
+          <select required aria-required="true" className={field} name="service" defaultValue="">
             <option value="" disabled>
               Select a service...
             </option>
