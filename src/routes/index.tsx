@@ -287,7 +287,7 @@ function Home() {
               <div className="p-7">
                 <h3 className="text-3xl">{s.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-5 flex flex-wrap justify-center gap-2">
                   {s.tags.map((t) => (
                     <span
                       key={t}
