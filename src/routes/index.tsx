@@ -278,7 +278,7 @@ function Home() {
                   loading="lazy"
                   width={1200}
                   height={900}
-                  className="h-full w-full bg-surface-2 object-contain object-center transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full bg-background object-contain object-center transition-transform duration-500 group-hover:scale-105"
                 />
                 <span className="absolute left-0 top-0 bg-primary px-3 py-1.5 font-display text-lg text-primary-foreground">
                   {s.n}
