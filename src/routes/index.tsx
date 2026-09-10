@@ -241,7 +241,7 @@ function Home() {
             </dl>
           </div>
           <div className="relative">
-            <div className="absolute -left-4 -top-4 hidden h-full w-full border border-primary lg:block" />
+            <div className="absolute -inset-4 hidden border border-primary lg:block" />
             <div className="relative aspect-[4/5] overflow-hidden shadow-[var(--shadow-panel)]">
               <img
                 src={heroImg}
