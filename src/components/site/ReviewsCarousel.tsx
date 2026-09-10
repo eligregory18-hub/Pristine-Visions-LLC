@@ -1,7 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
-import { useServerFn } from "@tanstack/react-start";
-
-import { getGoogleReviews, type PublicReview } from "@/lib/reviews.functions";
+type PublicReview = {
+  author: string;
+  photoUrl: string | null;
+  rating: number;
+  text: string;
+  relativeTime: string;
+  source: "google" | "facebook";
+};
 
 const fallbackReviews: PublicReview[] = [
   {
@@ -82,22 +86,13 @@ function ReviewCard({ review }: { review: PublicReview }) {
 }
 
 export function ReviewsCarousel() {
-  const fetchReviews = useServerFn(getGoogleReviews);
-  const { data } = useQuery({
-    queryKey: ["google-reviews"],
-    queryFn: () => fetchReviews({}),
-    staleTime: 1000 * 60 * 60,
-  });
-
-  const reviews = data && data.length > 0 ? data : fallbackReviews;
-
   return (
     <div
       className="mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [scrollbar-width:thin]"
       role="region"
       aria-label="Customer reviews"
     >
-      {reviews.map((review) => (
+      {fallbackReviews.map((review) => (
         <ReviewCard key={`${review.author}-${review.text.slice(0, 24)}`} review={review} />
       ))}
     </div>
