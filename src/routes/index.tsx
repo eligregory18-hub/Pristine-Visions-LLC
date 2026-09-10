@@ -112,7 +112,6 @@ const areas = [
 ];
 
 const badges = [
-  "Locally Owned & Operated",
   "Licensed & Insured",
   "Free Estimates",
   "Residential & Commercial",
@@ -235,9 +234,9 @@ function Home() {
               <span className="text-primary">Done Right.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Owner-operated by a local team that shows up on time, works hard, and treats every
-              property like our own. Window washing, pressure washing, screen cleaning and
-              gutter cleaning — residential and commercial.
+              Owner operated business that shows up on time, works hard, and treats every property
+              like our own. We Provide window washing, pressure washing, ceramic window coating,
+              screen cleaning, and gutter cleaning for residential & commercial properties.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
