@@ -19,7 +19,7 @@ const pressureImg = baDeckAsset.url;
 const screensImg = screensGuttersAsset.url;
 const FACEBOOK_URL = "https://www.facebook.com/PristineVisionsLLC";
 const GOOGLE_REVIEWS_URL =
-  "https://www.google.com/search?kgmid=/g/11nqy0khb8&q=Pristine+Visions+LLC";
+  "https://www.google.com/maps/search/?api=1&query=Pristine+Visions+LLC";
 
 const gallery = [
   { src: baWindowAsset.url, alt: "Before and after window cleaning" },
