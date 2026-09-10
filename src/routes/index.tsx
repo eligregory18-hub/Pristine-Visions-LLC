@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 
 import { QuoteForm } from "@/components/site/QuoteForm";
 import { ReviewsCarousel } from "@/components/site/ReviewsCarousel";
@@ -144,6 +145,8 @@ const faqs = [
 
 
 function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -175,13 +178,42 @@ function Home() {
               Free Quote
             </a>
           </nav>
-          <a
-            href="#quote"
-            className="rounded-sm bg-primary px-4 py-2 font-display text-base tracking-wide text-primary-foreground lg:hidden"
+          <button
+            type="button"
+            aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileMenuOpen}
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            className="flex size-11 items-center justify-center rounded-sm border border-border text-2xl text-foreground lg:hidden"
           >
-            Free Quote
-          </a>
+            <span aria-hidden>{mobileMenuOpen ? "×" : "☰"}</span>
+          </button>
         </div>
+        {mobileMenuOpen && (
+          <nav className="border-t border-border bg-background px-5 py-5 lg:hidden">
+            <div className="mx-auto flex max-w-7xl flex-col items-stretch gap-1 text-center text-sm font-semibold uppercase tracking-[0.16em]">
+              {nav.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="border-b border-border py-4 text-muted-foreground hover:text-foreground"
+                >
+                  {item.label}
+                </a>
+              ))}
+              <a href="tel:3202009941" className="py-4 text-primary">
+                (320) 200-9941
+              </a>
+              <a
+                href="#quote"
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-sm bg-primary px-4 py-3 font-display text-xl tracking-wide text-primary-foreground"
+              >
+                Free Quote
+              </a>
+            </div>
+          </nav>
+        )}
       </header>
 
       {/* Hero */}
