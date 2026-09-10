@@ -241,8 +241,8 @@ function Home() {
             </dl>
           </div>
           <div className="relative">
-            <div className="absolute -inset-4 hidden border border-primary lg:block" />
-            <div className="relative aspect-[4/5] overflow-hidden shadow-[var(--shadow-panel)]">
+            <div className="absolute -inset-2 hidden border border-primary lg:block" />
+            <div className="relative aspect-[5/4] overflow-hidden shadow-[var(--shadow-panel)]">
               <img
                 src={heroImg}
                 alt="Technician washing second-story windows with a water-fed pole"
