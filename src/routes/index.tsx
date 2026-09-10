@@ -247,18 +247,18 @@ function Home() {
               </a>
               <a
                 href="tel:3202009941"
-                className="rounded-sm border border-border px-7 py-4 font-display text-xl tracking-wide hover:bg-surface"
+                className="rounded-sm !border !border-primary px-7 py-4 font-display text-xl tracking-wide hover:bg-surface"
               >
                 Call (320) 200-9941
               </a>
             </div>
-            <dl className="mt-12 grid max-w-lg grid-cols-3 border-y border-border">
+            <dl className="mt-12 grid max-w-lg grid-cols-3 gap-3">
               {[
                 ["5★", "Satisfaction"],
                 ["Free", "Estimates"],
                 ["Local", "Owner-Operated"],
               ].map(([big, small]) => (
-                <div key={small} className="border-l border-border px-4 py-5 first:border-l-0">
+                <div key={small} className="rounded-sm !border !border-primary px-4 py-5">
                   <dt className="font-display text-3xl text-primary">{big}</dt>
                   <dd className="text-[0.68rem] uppercase tracking-[0.18em] text-muted-foreground">
                     {small}
@@ -318,7 +318,7 @@ function Home() {
                   {s.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-sm border border-primary bg-surface-2 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+                      className="rounded-sm !border !border-primary bg-surface-2 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
                     >
                       {t}
                     </span>
@@ -363,7 +363,7 @@ function Home() {
               href={FACEBOOK_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-sm border border-border px-6 py-3 font-display text-xl tracking-wide hover:bg-surface-2"
+              className="rounded-sm !border !border-primary px-6 py-3 font-display text-xl tracking-wide hover:bg-surface-2"
             >
               Follow Us on Facebook
             </a>
@@ -426,7 +426,7 @@ function Home() {
             {areas.map((a) => (
               <span
                 key={a}
-                className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide"
+                className="rounded-sm !border !border-primary bg-background px-5 py-3 font-display text-xl tracking-wide"
               >
                 {a}
               </span>
@@ -445,7 +445,7 @@ function Home() {
           {faqs.map((faq) => (
             <details
               key={faq.q}
-              className="group panel rounded-sm border border-primary bg-surface open:bg-background"
+              className="group panel rounded-sm !border !border-primary bg-surface open:bg-background"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between p-5 font-display text-lg tracking-wide text-foreground">
                 {faq.q}
