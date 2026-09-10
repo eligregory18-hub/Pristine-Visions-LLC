@@ -1,30 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import poleWashAsset from "@/assets/pole-wash.png.asset.json";
-import baWindowAsset from "@/assets/ba-window.png.asset.json";
-import baStairsAsset from "@/assets/ba-stairs.png.asset.json";
-import baPergolaAsset from "@/assets/ba-pergola.png.asset.json";
-
-import lakeHomeAsset from "@/assets/lake-home.png.asset.json";
-import baDeckAsset from "@/assets/ba-deck.png.asset.json";
-import baPictureWindowAsset from "@/assets/ba-picture-window.png.asset.json";
 import { QuoteForm } from "@/components/site/QuoteForm";
 import { ReviewsCarousel } from "@/components/site/ReviewsCarousel";
 
 const logoImg = "/pristine-visions-logo.png";
-const heroImg = poleWashAsset.url;
-const pressureImg = baDeckAsset.url;
+const heroImg = "/pole-wash.png";
+const pressureImg = "/ba-deck.png";
 const gutterCleaningImg = "/gutter-cleaning.png";
+const lakeHomeImg = "/lake-home.png";
 const FACEBOOK_URL = "https://www.facebook.com/PristineVisionsLLC";
 const GOOGLE_REVIEWS_URL =
   "https://www.google.com/maps/search/?api=1&query=Pristine+Visions+LLC";
 
 const gallery = [
-  { src: baWindowAsset.url, alt: "Before and after window cleaning" },
-  { src: baDeckAsset.url, alt: "Before and after deck pressure washing" },
-  { src: baStairsAsset.url, alt: "Before and after stairway pressure washing" },
-  { src: baPictureWindowAsset.url, alt: "Before and after picture window cleaning" },
-  { src: baPergolaAsset.url, alt: "Before and after pergola pressure washing" },
+  { src: "/ba-window.png", alt: "Before and after window cleaning" },
+  { src: "/ba-deck.png", alt: "Before and after deck pressure washing" },
+  { src: "/ba-stairs.png", alt: "Before and after stairway pressure washing" },
+  { src: "/ba-picture-window.png", alt: "Before and after picture window cleaning" },
+  { src: "/ba-pergola.png", alt: "Before and after pergola pressure washing" },
 ];
 
 export const Route = createFileRoute("/")({
@@ -82,7 +75,7 @@ const services = [
   {
     n: "04",
     title: "Ceramic Window Coating",
-    img: baPictureWindowAsset.url,
+    img: "/ba-picture-window.png",
     body: "We use a hydrophobic coating that bonds to your glass. This will reduce & repel rain, hard water, and stains while helping protect your windows against buildup and long-term damage, lasting up to 12 months.",
     tags: ["Exterior Window", "Hydrophobic Coating", "Bundle with Window Cleaning"],
   },
@@ -355,7 +348,7 @@ function Home() {
           <div className="relative">
             <div className="aspect-[4/5] overflow-hidden rounded-sm">
               <img
-                src={lakeHomeAsset.url}
+                src={lakeHomeImg}
                 alt="Clean windows on a modern lakeside home"
                 loading="lazy"
                 width={1200}
