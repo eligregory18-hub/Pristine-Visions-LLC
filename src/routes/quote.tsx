@@ -20,13 +20,19 @@ export function QuoteForm() {
       <div className="mx-auto max-w-3xl px-5">
         <div className="section-head text-center">
           <p className="eyebrow">Get Started</p>
+          <h2 className="text-5xl sm:text-6xl" style={{ marginTop: 12 }}>
+            Request a <span style={{ color: "var(--gold)" }}>Free Quote</span>
+          </h2>
           <p className="lead">Fill out the form and we&apos;ll get back to you fast — usually the same day.</p>
         </div>
 
         <form
           className="quote-form panel mx-auto rounded-sm p-6 text-left sm:p-10"
           id="quoteForm"
-          style={{ border: "1px solid var(--gold)", outline: "1px solid var(--gold)", outlineOffset: "-1px" }}
+          style={{
+            border: "1px solid var(--gold)",
+            boxShadow: "0 0 0 1px var(--gold), var(--shadow-panel)",
+          }}
         >
           <div className="form-grid grid gap-5 sm:grid-cols-2">
             <div className="form-field">
