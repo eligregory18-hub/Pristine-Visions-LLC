@@ -28,31 +28,34 @@ export function QuoteForm({ showHeader = true }: { showHeader?: boolean }) {
           </div>
         ) : null}
 
-        <form
-          className="quote-form panel mx-auto rounded-sm p-6 text-left sm:p-10"
-          id="quoteForm"
+        <div
+          className="mx-auto rounded-sm"
           style={{ border: "1px solid var(--primary)" }}
         >
+          <form
+            className="quote-form panel rounded-sm p-6 text-left sm:p-10"
+            id="quoteForm"
+          >
           <div className="form-grid grid gap-5 sm:grid-cols-2">
             <div className="form-field">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="first-name">First Name*</label>
-              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/40" type="text" id="first-name" name="first_name" placeholder="John" required />
+              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="text" id="first-name" name="first_name" placeholder="John" required />
             </div>
             <div className="form-field">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="last-name">Last Name*</label>
-              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/40" type="text" id="last-name" name="last_name" placeholder="Smith" required />
+              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="text" id="last-name" name="last_name" placeholder="Smith" required />
             </div>
             <div className="form-field">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="phone-number">Phone Number*</label>
-              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/40" type="tel" id="phone-number" name="phone_number" placeholder="620-000-0000" required />
+              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="tel" id="phone-number" name="phone_number" placeholder="620-000-0000" required />
             </div>
             <div className="form-field">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="city">City*</label>
-              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/40" type="text" id="city" name="city" placeholder="McPherson" required />
+              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="text" id="city" name="city" placeholder="McPherson" required />
             </div>
             <div className="form-field full sm:col-span-2">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="service-needed">Service Needed*</label>
-              <select className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/40" id="service-needed" name="service_needed" defaultValue="" required>
+              <select className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground outline-none" id="service-needed" name="service_needed" defaultValue="" required>
                 <option value="" disabled>Select a service...</option>
                 <option value="window_washing">Window Washing</option>
                 <option value="pressure_washing">Pressure Washing &amp; Soft Washing</option>
@@ -64,7 +67,7 @@ export function QuoteForm({ showHeader = true }: { showHeader?: boolean }) {
             <div className="form-field full sm:col-span-2">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="additional-details">Additional Details (optional)</label>
               <textarea
-                className="w-full resize-y rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/40"
+                className="w-full resize-y rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none"
                 id="additional-details"
                 name="additional_details"
                 rows={4}
@@ -78,13 +81,14 @@ export function QuoteForm({ showHeader = true }: { showHeader?: boolean }) {
               <strong style={{ color: "var(--white)" }}>(Optional)</strong> I agree to receive SMS text messages from Pristine Visions LLC about my quote, appointment confirmations, service reminders, and review requests. Consent is not required to get a quote or service. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our Privacy Policy and Terms. We don&apos;t sell or share your mobile information with third parties for marketing.
             </span>
           </label>
-          <button type="submit" className="btn btn-primary mt-6 w-full rounded-sm bg-primary px-6 py-4 font-semibold text-primary-foreground transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-surface">
+          <button type="submit" className="btn btn-primary mt-6 w-full rounded-sm bg-primary px-6 py-4 font-semibold text-primary-foreground">
             Submit Quote Request
           </button>
           <p className="form-footer mt-5 text-center text-sm text-muted-foreground">
             Or call/text us directly: <a className="text-primary hover:underline" href="tel:3202009941">(320) 200-9941</a>
           </p>
-        </form>
+          </form>
+        </div>
 
         <div className="sent-panel panel" id="sentPanel" style={{ display: "none" }}>
           <h3>Request received</h3>
