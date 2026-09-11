@@ -39,23 +39,23 @@ export function QuoteForm({ showHeader = true }: { showHeader?: boolean }) {
           <div className="form-grid grid gap-5 sm:grid-cols-2">
             <div className="form-field">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="first-name">First Name*</label>
-              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="text" id="first-name" name="first_name" placeholder="John" required />
+              <input className="quote-input w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="text" id="first-name" name="first_name" placeholder="John" required />
             </div>
             <div className="form-field">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="last-name">Last Name*</label>
-              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="text" id="last-name" name="last_name" placeholder="Smith" required />
+              <input className="quote-input w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="text" id="last-name" name="last_name" placeholder="Smith" required />
             </div>
             <div className="form-field">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="phone-number">Phone Number*</label>
-              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="tel" id="phone-number" name="phone_number" placeholder="620-000-0000" required />
+              <input className="quote-input w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="tel" id="phone-number" name="phone_number" placeholder="620-000-0000" required />
             </div>
             <div className="form-field">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="city">City*</label>
-              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="text" id="city" name="city" placeholder="McPherson" required />
+              <input className="quote-input w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="text" id="city" name="city" placeholder="McPherson" required />
             </div>
             <div className="form-field full sm:col-span-2">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="service-needed">Service Needed*</label>
-              <select className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground outline-none" id="service-needed" name="service_needed" defaultValue="" required>
+              <select className="quote-input w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground outline-none" id="service-needed" name="service_needed" defaultValue="" required>
                 <option value="" disabled>Select a service...</option>
                 <option value="window_washing">Window Washing</option>
                 <option value="pressure_washing">Pressure Washing &amp; Soft Washing</option>
@@ -67,7 +67,7 @@ export function QuoteForm({ showHeader = true }: { showHeader?: boolean }) {
             <div className="form-field full sm:col-span-2">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="additional-details">Additional Details (optional)</label>
               <textarea
-                className="w-full resize-y rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none"
+                className="quote-input w-full resize-y rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none"
                 id="additional-details"
                 name="additional_details"
                 rows={4}
