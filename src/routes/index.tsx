@@ -423,7 +423,7 @@ function Home() {
           <div className="mx-auto mt-10 max-w-5xl">
             <div className="grid gap-10 md:grid-cols-2">
             <div>
-              <h3 className="text-5xl underline decoration-primary decoration-2 underline-offset-8 sm:text-6xl">
+              <h3 className="text-3xl underline decoration-primary decoration-2 underline-offset-8 sm:text-4xl">
                 Nebraska
               </h3>
               <div className="mt-5 flex flex-wrap justify-center gap-3">
@@ -438,7 +438,7 @@ function Home() {
               </div>
             </div>
             <div>
-              <h3 className="text-5xl underline decoration-primary decoration-2 underline-offset-8 sm:text-6xl">
+              <h3 className="text-3xl underline decoration-primary decoration-2 underline-offset-8 sm:text-4xl">
                 Minnesota
               </h3>
               <div className="mt-5 flex flex-wrap justify-center gap-3">
