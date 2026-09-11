@@ -21,14 +21,14 @@ export function QuoteForm() {
         <div className="section-head text-center">
           <p className="eyebrow">Get Started</p>
           <h2 className="text-5xl sm:text-6xl" style={{ marginTop: 12 }}>
-            Request a <span style={{ color: "var(--gold)" }}>Free Quote</span>
+            Request a <span style={{ color: "var(--primary)" }}>Free Quote</span>
           </h2>
           <p className="lead">Fill out the form and we&apos;ll get back to you fast — usually the same day.</p>
         </div>
 
         <div
           className="mx-auto rounded-sm p-px"
-          style={{ backgroundColor: "var(--gold)" }}
+          style={{ backgroundColor: "var(--primary)" }}
         >
           <form
             className="quote-form panel rounded-sm p-6 text-left sm:p-10"
