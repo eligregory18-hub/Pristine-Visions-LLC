@@ -3,7 +3,6 @@ import { useState } from "react";
 
 import { QuoteForm } from "@/components/site/QuoteForm";
 import { ReviewsCarousel } from "@/components/site/ReviewsCarousel";
-import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 const logoImg = "/pristine-visions-logo.png";
 const heroImg = "/pole-wash.png";
@@ -370,9 +369,7 @@ function Home() {
             </a>
           </div>
 
-          <ErrorBoundary>
-            <ReviewsCarousel />
-          </ErrorBoundary>
+          <ReviewsCarousel />
         </div>
       </section>
 
@@ -476,9 +473,7 @@ function Home() {
           </p>
         </div>
         <div className="mt-10">
-          <ErrorBoundary>
-            <QuoteForm />
-          </ErrorBoundary>
+          <QuoteForm />
         </div>
       </section>
 
