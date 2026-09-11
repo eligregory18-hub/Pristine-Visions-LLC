@@ -412,6 +412,8 @@ function Home() {
         </div>
       </section>
 
+      <QuoteForm />
+
       {/* Service area */}
       <section id="area" className="border-y border-border bg-surface py-24">
         <div className="mx-auto max-w-7xl px-5 text-center">
@@ -422,50 +424,48 @@ function Home() {
           </p>
           <div className="mx-auto mt-10 max-w-5xl">
             <div className="grid gap-10 md:grid-cols-2">
-            <div>
-              <h3 className="text-3xl underline decoration-primary decoration-2 underline-offset-8 sm:text-4xl">
-                Nebraska
-              </h3>
-              <div className="mt-5 flex flex-wrap justify-center gap-3">
-                {areas.slice(0, 2).map((a) => (
-                  <span
-                    key={a}
-                    className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide"
-                  >
-                    {a}
+              <div>
+                <h3 className="text-3xl underline decoration-primary decoration-2 underline-offset-8 sm:text-4xl">
+                  Nebraska
+                </h3>
+                <div className="mt-5 flex flex-wrap justify-center gap-3">
+                  {areas.slice(0, 2).map((a) => (
+                    <span
+                      key={a}
+                      className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide"
+                    >
+                      {a}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-3 flex justify-center">
+                  <span className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide">
+                    Surrounding Areas
                   </span>
-                ))}
+                </div>
               </div>
-              <div className="mt-3 flex justify-center">
-                <span className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide">
-                  Surrounding Areas
-                </span>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-3xl underline decoration-primary decoration-2 underline-offset-8 sm:text-4xl">
-                Minnesota
-              </h3>
-              <div className="mt-5 flex flex-wrap justify-center gap-3">
-                {areas.slice(2, 7).map((a) => (
-                  <span
-                    key={a}
-                    className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide"
-                  >
-                    {a}
+              <div>
+                <h3 className="text-3xl underline decoration-primary decoration-2 underline-offset-8 sm:text-4xl">
+                  Minnesota
+                </h3>
+                <div className="mt-5 flex flex-wrap justify-center gap-3">
+                  {areas.slice(2, 7).map((a) => (
+                    <span
+                      key={a}
+                      className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide"
+                    >
+                      {a}
+                    </span>
+                  ))}
+                  <span className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide">
+                    Surrounding Areas
                   </span>
-                ))}
-                <span className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide">
-                  Surrounding Areas
-                </span>
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
       </section>
-
-      <QuoteForm />
 
       {/* FAQ */}
       <section id="faq" className="mx-auto max-w-3xl px-5 py-24">
