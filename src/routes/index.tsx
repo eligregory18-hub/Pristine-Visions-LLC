@@ -170,6 +170,9 @@ function Home() {
             <a href="tel:3202009941" className="text-primary">
               (320) 200-9941
             </a>
+            <a href="/quote" className="rounded-sm bg-primary px-4 py-2.5 font-display text-base tracking-wide text-primary-foreground">
+              Get a Free Quote
+            </a>
           </nav>
           <button
             type="button"
@@ -196,6 +199,13 @@ function Home() {
               ))}
               <a href="tel:3202009941" className="py-4 text-primary">
                 (320) 200-9941
+              </a>
+              <a
+                href="/quote"
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-sm bg-primary px-4 py-3 font-display text-xl tracking-wide text-primary-foreground"
+              >
+                Get a Free Quote
               </a>
             </div>
           </nav>
@@ -226,6 +236,12 @@ function Home() {
               gutter cleaning — residential and commercial.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="/quote"
+                className="rounded-sm bg-primary px-7 py-4 font-display text-xl tracking-wide text-primary-foreground transition-transform hover:-translate-y-0.5"
+              >
+                Get a Free Quote
+              </a>
               <a
                 href="tel:3202009941"
                 className="rounded-sm border border-border px-7 py-4 font-display text-xl tracking-wide hover:bg-surface"
