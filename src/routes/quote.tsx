@@ -16,9 +16,9 @@ export const Route = createFileRoute("/quote")({
 
 export function QuoteForm() {
   return (
-    <section id="quote">
-      <div className="wrap">
-        <div className="section-head">
+    <section id="quote" className="border-y border-border bg-surface py-24">
+      <div className="mx-auto max-w-3xl px-5">
+        <div className="section-head text-center">
           <p className="eyebrow">Get Started</p>
           <h2 style={{ marginTop: 12 }}>
             Request a <span style={{ color: "var(--gold)" }}>Free Quote</span>
@@ -26,7 +26,7 @@ export function QuoteForm() {
           <p className="lead">Fill out the form and we&apos;ll get back to you fast — usually the same day.</p>
         </div>
 
-        <form className="quote-form panel rounded-sm p-6 sm:p-10" id="quoteForm">
+        <form className="quote-form panel mx-auto rounded-sm p-6 text-left sm:p-10" id="quoteForm">
           <div className="form-grid">
             <div className="form-field">
               <label htmlFor="first-name">First Name*</label>
