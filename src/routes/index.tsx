@@ -64,7 +64,7 @@ const services = [
     title: "Pressure Washing & Soft Washing",
     img: pressureImg,
     body: "Years of grime lifted off driveways, patios, siding and brick with a 4400 PSI commercial-grade machine. Big difference in a single visit.",
-    tags: ["Driveways", "Siding", "Patios", "Brick", "Decks"],
+    tags: ["Driveways", "Siding", "Patios", "Brick"],
   },
   {
     n: "03",
@@ -112,6 +112,7 @@ const areas = [
 ];
 
 const badges = [
+  "Locally Owned & Operated",
   "Licensed & Insured",
   "Free Estimates",
   "Residential & Commercial",
@@ -234,9 +235,9 @@ function Home() {
               <span className="text-primary">Done Right.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Owner operated business that shows up on time, works hard, and treats every property
-              like our own. We Provide window washing, pressure washing, ceramic window coating,
-              screen cleaning, and gutter cleaning for residential & commercial properties.
+              Owner-operated by a local team that shows up on time, works hard, and treats every
+              property like our own. Window washing, pressure washing, screen cleaning and
+              gutter cleaning — residential and commercial.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -247,7 +248,7 @@ function Home() {
               </a>
               <a
                 href="tel:3202009941"
-                className="rounded-sm !border !border-primary px-7 py-4 font-display text-xl tracking-wide hover:bg-surface"
+                className="rounded-sm border border-border px-7 py-4 font-display text-xl tracking-wide hover:bg-surface"
               >
                 Call (320) 200-9941
               </a>
@@ -318,7 +319,7 @@ function Home() {
                   {s.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-sm !border !border-primary bg-surface-2 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+                      className="rounded-sm bg-surface-2 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
                     >
                       {t}
                     </span>
@@ -363,7 +364,7 @@ function Home() {
               href={FACEBOOK_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-sm !border !border-primary px-6 py-3 font-display text-xl tracking-wide hover:bg-surface-2"
+              className="rounded-sm border border-border px-6 py-3 font-display text-xl tracking-wide hover:bg-surface-2"
             >
               Follow Us on Facebook
             </a>
@@ -426,7 +427,7 @@ function Home() {
             {areas.map((a) => (
               <span
                 key={a}
-                className="rounded-sm !border !border-primary bg-background px-5 py-3 font-display text-xl tracking-wide"
+                className="rounded-sm border border-border bg-background px-5 py-3 font-display text-xl tracking-wide"
               >
                 {a}
               </span>
@@ -445,7 +446,7 @@ function Home() {
           {faqs.map((faq) => (
             <details
               key={faq.q}
-              className="group panel rounded-sm !border !border-primary bg-surface open:bg-background"
+              className="group panel rounded-sm border border-border bg-surface open:bg-background"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between p-5 font-display text-lg tracking-wide text-foreground">
                 {faq.q}
