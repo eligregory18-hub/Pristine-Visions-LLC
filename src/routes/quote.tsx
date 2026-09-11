@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 function formatPhoneNumber(value: string) {
@@ -21,8 +21,37 @@ export const Route = createFileRoute("/quote")({
   component: QuotePage,
 });
 
+const WEB3FORMS_ACCESS_KEY = "0d153575-358e-4569-9612-dacb25bd3184";
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+
 export function QuoteForm({ showHeader = true }: { showHeader?: boolean }) {
   const [phone, setPhone] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setStatus("submitting");
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData,
+      });
+      const result = await response.json();
+      if (result.success) {
+        setStatus("success");
+        form.reset();
+        setPhone("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
 
   return (
     <section id="quote" className="border-y border-border bg-surface py-24">
@@ -44,7 +73,12 @@ export function QuoteForm({ showHeader = true }: { showHeader?: boolean }) {
           <form
             className="quote-form panel rounded-sm p-6 text-left sm:p-10"
             id="quoteForm"
+            onSubmit={handleSubmit}
+            style={{ display: status === "success" ? "none" : undefined }}
           >
+          <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+          <input type="hidden" name="subject" value="New Quote Request — Pristine Visions LLC" />
+          <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
           <div className="form-grid grid gap-5 sm:grid-cols-2">
             <div className="form-field">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="first-name">First Name*</label>
@@ -99,16 +133,21 @@ export function QuoteForm({ showHeader = true }: { showHeader?: boolean }) {
               <strong style={{ color: "var(--white)" }}>(Optional)</strong> I agree to receive SMS text messages from Pristine Visions LLC about my quote, appointment confirmations, service reminders, and review requests. Consent is not required to get a quote or service. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our Privacy Policy and Terms. We don&apos;t sell or share your mobile information with third parties for marketing.
             </span>
           </label>
-          <button type="submit" className="btn btn-primary mt-6 w-full rounded-sm bg-primary px-6 py-4 font-semibold text-primary-foreground">
-            Submit Quote Request
+          <button type="submit" className="btn btn-primary mt-6 w-full rounded-sm bg-primary px-6 py-4 font-semibold text-primary-foreground" disabled={status === "submitting"}>
+            {status === "submitting" ? "Sending..." : "Submit Quote Request"}
           </button>
+          {status === "error" ? (
+            <p className="mt-4 text-center text-sm text-red-500">
+              Something went wrong sending your request. Please call/text us at (320) 200-9941.
+            </p>
+          ) : null}
           <p className="form-footer mt-5 text-center text-sm text-muted-foreground">
             Or call/text us directly: <a className="text-primary hover:underline" href="tel:3202009941">(320) 200-9941</a>
           </p>
           </form>
         </div>
 
-        <div className="sent-panel panel" id="sentPanel" style={{ display: "none" }}>
+        <div className="sent-panel panel" id="sentPanel" style={{ display: status === "success" ? "block" : "none" }}>
           <h3>Request received</h3>
           <p>Thanks — we&apos;ll be in touch shortly, usually the same day. Need it faster? Call (320) 200-9941.</p>
         </div>
