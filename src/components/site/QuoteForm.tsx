@@ -16,6 +16,9 @@ export function QuoteForm() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
+  const stopInputPropagation = (event: FormEvent<HTMLElement>) => {
+    event.stopPropagation();
+  };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -89,13 +92,27 @@ export function QuoteForm() {
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             First Name
           </span>
-          <input required aria-required="true" className={field} placeholder="Jane" name="first" />
+          <input
+            required
+            aria-required="true"
+            className={field}
+            placeholder="Jane"
+            name="first"
+            onInput={stopInputPropagation}
+          />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Last Name
           </span>
-          <input required aria-required="true" className={field} placeholder="Doe" name="last" />
+          <input
+            required
+            aria-required="true"
+            className={field}
+            placeholder="Doe"
+            name="last"
+            onInput={stopInputPropagation}
+          />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
@@ -112,13 +129,21 @@ export function QuoteForm() {
             className={field}
             placeholder="320-200-9941"
             name="phone"
+            onInput={stopInputPropagation}
           />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             City
           </span>
-          <input required aria-required="true" className={field} placeholder="Lincoln" name="city" />
+          <input
+            required
+            aria-required="true"
+            className={field}
+            placeholder="Lincoln"
+            name="city"
+            onInput={stopInputPropagation}
+          />
         </label>
         <label className="block sm:col-span-2">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
@@ -144,6 +169,7 @@ export function QuoteForm() {
             className={field}
             name="details"
             placeholder="Number of windows, square footage, timing..."
+            onInput={stopInputPropagation}
           />
         </label>
       </div>
