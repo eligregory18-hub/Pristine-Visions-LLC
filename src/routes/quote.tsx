@@ -26,7 +26,7 @@ export function QuoteForm() {
           <p className="lead">Fill out the form and we&apos;ll get back to you fast — usually the same day.</p>
         </div>
 
-        <form className="quote-form panel" id="quoteForm">
+        <form className="quote-form panel rounded-sm p-6 sm:p-10" id="quoteForm">
           <div className="form-grid">
             <div className="form-field">
               <label htmlFor="first-name">First Name*</label>
@@ -49,10 +49,9 @@ export function QuoteForm() {
               <select id="service-needed" name="service_needed" defaultValue="" required>
                 <option value="" disabled>Select a service...</option>
                 <option value="window_washing">Window Washing</option>
-                <option value="pressure_washing">Pressure Washing</option>
-                <option value="parking_lot_striping">Parking Lot Striping</option>
-                <option value="gutter_cleaning">Gutter Cleaning</option>
-                <option value="screen_cleaning">Screen Cleaning</option>
+                <option value="pressure_washing">Pressure Washing &amp; Soft Washing</option>
+                <option value="screen_gutter_cleaning">Screen &amp; Gutter Cleaning</option>
+                <option value="ceramic_window_coating">Ceramic Window Coating</option>
                 <option value="multiple_services">Multiple Services</option>
               </select>
             </div>
