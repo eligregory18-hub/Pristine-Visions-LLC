@@ -80,7 +80,7 @@ export function QuoteForm() {
             Submit Quote Request
           </button>
           <p className="form-footer mt-5 text-center text-sm text-muted-foreground">
-            Or call/text us directly: <a href="tel:3202009941">(320) 200-9941</a>
+            Or call/text us directly: <a className="text-primary hover:underline" href="tel:3202009941">(320) 200-9941</a>
           </p>
         </form>
 
