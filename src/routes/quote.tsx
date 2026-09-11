@@ -20,7 +20,7 @@ export function QuoteForm() {
       <div className="mx-auto max-w-3xl px-5">
         <div className="section-head text-center">
           <p className="eyebrow">Get Started</p>
-          <h2 style={{ marginTop: 12 }}>
+          <h2 className="text-5xl sm:text-6xl" style={{ marginTop: 12 }}>
             Request a <span style={{ color: "var(--gold)" }}>Free Quote</span>
           </h2>
           <p className="lead">Fill out the form and we&apos;ll get back to you fast — usually the same day.</p>
