@@ -14,17 +14,19 @@ export const Route = createFileRoute("/quote")({
   component: QuotePage,
 });
 
-export function QuoteForm() {
+export function QuoteForm({ showHeader = true }: { showHeader?: boolean }) {
   return (
     <section id="quote" className="border-y border-border bg-surface py-24">
       <div className="mx-auto max-w-3xl px-5">
-        <div className="section-head text-center">
-          <p className="eyebrow">Get Started</p>
-          <h2 className="text-5xl sm:text-6xl" style={{ marginTop: 12 }}>
-            Request a <span style={{ color: "var(--primary)" }}>Free Quote</span>
-          </h2>
-          <p className="lead">Fill out the form and we&apos;ll get back to you fast — usually the same day.</p>
-        </div>
+        {showHeader ? (
+          <div className="section-head text-center">
+            <p className="eyebrow">Get Started</p>
+            <h2 className="text-5xl sm:text-6xl" style={{ marginTop: 12 }}>
+              Request a <span style={{ color: "var(--primary)" }}>Free Quote</span>
+            </h2>
+            <p className="lead">Fill out the form and we&apos;ll get back to you fast — usually the same day.</p>
+          </div>
+        ) : null}
 
         <div
           className="mx-auto rounded-sm"
@@ -76,14 +78,14 @@ export function QuoteForm() {
           <label className="consent mt-6 flex items-start gap-3 rounded-sm border border-border bg-surface-2/50 p-4 text-xs leading-relaxed text-muted-foreground">
             <input className="mt-1 size-4 shrink-0 accent-[#c98c1a]" type="checkbox" name="sms_consent" />
             <span className="text-left">
-              <strong style={{ color: "var(--white)" }}>(Optional)</strong> I agree to receive SMS text messages from CGA Property Services about my quote, appointment confirmations, service reminders, and review requests. Consent is not required to get a quote or service. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our Privacy Policy and Terms. We don&apos;t sell or share your mobile information with third parties for marketing.
+              <strong style={{ color: "var(--white)" }}>(Optional)</strong> I agree to receive SMS text messages from Pristine Visions LLC about my quote, appointment confirmations, service reminders, and review requests. Consent is not required to get a quote or service. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our Privacy Policy and Terms. We don&apos;t sell or share your mobile information with third parties for marketing.
             </span>
           </label>
           <button type="submit" className="btn btn-primary mt-6 w-full rounded-sm bg-primary px-6 py-4 font-semibold text-primary-foreground">
             Submit Quote Request
           </button>
           <p className="form-footer mt-5 text-center text-sm text-muted-foreground">
-            Or call/text us directly: <a href="tel:3202009941">(320) 200-9941</a>
+            Or call/text us directly: <a className="text-primary hover:underline" href="tel:3202009941">(320) 200-9941</a>
           </p>
           </form>
         </div>
@@ -118,7 +120,7 @@ function QuotePage() {
           </p>
         </div>
 
-        <QuoteForm />
+        <QuoteForm showHeader={false} />
       </div>
     </main>
   );
