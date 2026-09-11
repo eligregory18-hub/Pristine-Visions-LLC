@@ -28,7 +28,7 @@ export function QuoteForm() {
 
         <div
           className="mx-auto rounded-sm"
-          style={{ backgroundColor: "var(--primary)" }}
+          style={{ border: "1px solid var(--primary)" }}
         >
           <form
             className="quote-form panel rounded-sm p-6 text-left sm:p-10"
