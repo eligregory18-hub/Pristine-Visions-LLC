@@ -39,7 +39,7 @@ export function QuoteForm() {
   return (
     <form
       className="panel rounded-sm p-6 sm:p-8"
-      action="https://formspree.io/f/xbgjqqkb"
+      action="https://api.web3forms.com/submit"
       method="POST"
       onSubmit={async (e) => {
         e.preventDefault();
@@ -48,7 +48,7 @@ export function QuoteForm() {
         setError("");
 
         try {
-          const response = await fetch("https://formspree.io/f/xbgjqqkb", {
+          const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
             headers: {
               Accept: "application/json",
@@ -56,7 +56,8 @@ export function QuoteForm() {
             body: new FormData(form),
           });
 
-          if (!response.ok) {
+          const result = (await response.json()) as { success?: boolean };
+          if (!response.ok || !result.success) {
             throw new Error("Form submission failed");
           }
 
@@ -70,7 +71,9 @@ export function QuoteForm() {
         }
       }}
     >
-      <input type="hidden" name="_subject" value="New Pristine Visions quote request" />
+      <input type="hidden" name="access_key" value="0d153575-358e-4569-9612-dacb25bd3184" />
+      <input type="hidden" name="subject" value="New Pristine Visions quote request" />
+      <input type="hidden" name="from_name" value="Pristine Visions website quote form" />
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
