@@ -430,14 +430,14 @@ function Home() {
                 {areas.slice(0, 2).map((a) => (
                   <span
                     key={a}
-                    className="rounded-sm border border-border bg-background px-5 py-3 font-display text-xl tracking-wide"
+                    className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide"
                   >
                     {a}
                   </span>
                 ))}
               </div>
               <div className="mt-3 flex justify-center">
-                <span className="rounded-sm border border-border bg-background px-5 py-3 font-display text-xl tracking-wide">
+                <span className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide">
                   Surrounding Areas
                 </span>
               </div>
@@ -450,12 +450,12 @@ function Home() {
                 {areas.slice(2, 7).map((a) => (
                   <span
                     key={a}
-                    className="rounded-sm border border-border bg-background px-5 py-3 font-display text-xl tracking-wide"
+                    className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide"
                   >
                     {a}
                   </span>
                 ))}
-                <span className="rounded-sm border border-border bg-background px-5 py-3 font-display text-xl tracking-wide">
+                <span className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide">
                   Surrounding Areas
                 </span>
               </div>
