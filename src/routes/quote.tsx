@@ -26,7 +26,7 @@ export function QuoteForm() {
           <p className="lead">Fill out the form and we&apos;ll get back to you fast — usually the same day.</p>
         </div>
 
-        <form className="quote-form panel mx-auto rounded-sm p-6 text-left sm:p-10" id="quoteForm">
+        <form className="quote-form panel mx-auto rounded-sm border-2 border-primary p-6 text-left sm:p-10" id="quoteForm">
           <div className="form-grid">
             <div className="form-field">
               <label htmlFor="first-name">First Name*</label>
@@ -71,7 +71,7 @@ export function QuoteForm() {
               <strong style={{ color: "var(--white)" }}>(Optional)</strong> I agree to receive SMS text messages from CGA Property Services about my quote, appointment confirmations, service reminders, and review requests. Consent is not required to get a quote or service. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our Privacy Policy and Terms. We don&apos;t sell or share your mobile information with third parties for marketing.
             </span>
           </label>
-          <button type="submit" className="btn btn-primary">Submit Quote Request</button>
+          <button type="submit" className="btn btn-primary mt-6 w-full">Submit Quote Request</button>
           <p className="form-footer">
             Or call/text us directly: <a href="tel:3202009941">(320) 200-9941</a>
           </p>
