@@ -393,7 +393,7 @@ function Home() {
           <div>
             <p className="eyebrow">Why Pristine Visions</p>
             <h2 className="mt-3 text-5xl sm:text-6xl">
-              Reliable, <span className="text-primary">Professional</span> & Local
+              Reliable, <span className="text-primary">Local</span> & Professional
             </h2>
             <div className="mt-10 space-y-8">
               {reasons.map((r) => (
