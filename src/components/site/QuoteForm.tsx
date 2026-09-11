@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 const services = [
   "Window Washing",
@@ -15,24 +15,14 @@ export function QuoteForm() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
-  const formRef = useRef<HTMLFormElement>(null);
+  const [phone, setPhone] = useState("");
 
-  useEffect(() => {
-    const form = formRef.current;
-    if (!form) return;
-
-    const inputs = form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>(
-      'input:not([type="hidden"]), textarea',
-    );
-    const stopBeforeReactDelegation = (event: Event) => {
-      event.stopImmediatePropagation();
-    };
-
-    inputs.forEach((input) => input.addEventListener("input", stopBeforeReactDelegation));
-    return () => {
-      inputs.forEach((input) => input.removeEventListener("input", stopBeforeReactDelegation));
-    };
-  }, []);
+  const formatPhone = (value: string) => {
+    const digits = value.replace(/\D/g, "").slice(0, 10);
+    if (digits.length <= 3) return digits;
+    if (digits.length <= 6) return `${digits.slice(0, 3)}-${digits.slice(3)}`;
+    return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
+  };
 
   if (sent) {
     return (
@@ -48,7 +38,6 @@ export function QuoteForm() {
 
   return (
     <form
-      ref={formRef}
       className="panel rounded-sm p-6 sm:p-8"
       action="https://formspree.io/f/xbgjqqkb"
       method="POST"
@@ -87,31 +76,44 @@ export function QuoteForm() {
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             First Name
           </span>
-          <input required className={field} placeholder="Jane" name="first" />
+          <input required aria-required="true" className={field} placeholder="Jane" name="first" />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Last Name
           </span>
-          <input required className={field} placeholder="Doe" name="last" />
+          <input required aria-required="true" className={field} placeholder="Doe" name="last" />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Phone Number
           </span>
-          <input required type="tel" className={field} placeholder="320-200-9941" name="phone" />
+          <input
+            required
+            aria-required="true"
+            type="tel"
+            inputMode="numeric"
+            autoComplete="tel"
+            maxLength={12}
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            className={field}
+            placeholder="320-200-9941"
+            name="phone"
+            value={phone}
+            onChange={(e) => setPhone(formatPhone(e.target.value))}
+          />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             City
           </span>
-          <input required className={field} placeholder="Lincoln" name="city" />
+          <input required aria-required="true" className={field} placeholder="Lincoln" name="city" />
         </label>
         <label className="block sm:col-span-2">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Service Needed
           </span>
-          <select required className={field} name="service" defaultValue="">
+          <select required aria-required="true" className={field} name="service" defaultValue="">
             <option value="" disabled>
               Select a service...
             </option>
