@@ -31,26 +31,26 @@ export function QuoteForm() {
           id="quoteForm"
           style={{ border: "2px solid var(--gold)" }}
         >
-          <div className="form-grid">
+          <div className="form-grid grid gap-5 sm:grid-cols-2">
             <div className="form-field">
-              <label htmlFor="first-name">First Name*</label>
-              <input type="text" id="first-name" name="first_name" placeholder="John" required />
+              <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="first-name">First Name*</label>
+              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/40" type="text" id="first-name" name="first_name" placeholder="John" required />
             </div>
             <div className="form-field">
-              <label htmlFor="last-name">Last Name*</label>
-              <input type="text" id="last-name" name="last_name" placeholder="Smith" required />
+              <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="last-name">Last Name*</label>
+              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/40" type="text" id="last-name" name="last_name" placeholder="Smith" required />
             </div>
             <div className="form-field">
-              <label htmlFor="phone-number">Phone Number*</label>
-              <input type="tel" id="phone-number" name="phone_number" placeholder="620-000-0000" required />
+              <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="phone-number">Phone Number*</label>
+              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/40" type="tel" id="phone-number" name="phone_number" placeholder="620-000-0000" required />
             </div>
             <div className="form-field">
-              <label htmlFor="city">City*</label>
-              <input type="text" id="city" name="city" placeholder="McPherson" required />
+              <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="city">City*</label>
+              <input className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/40" type="text" id="city" name="city" placeholder="McPherson" required />
             </div>
-            <div className="form-field full">
-              <label htmlFor="service-needed">Service Needed*</label>
-              <select id="service-needed" name="service_needed" defaultValue="" required>
+            <div className="form-field full sm:col-span-2">
+              <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="service-needed">Service Needed*</label>
+              <select className="w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/40" id="service-needed" name="service_needed" defaultValue="" required>
                 <option value="" disabled>Select a service...</option>
                 <option value="window_washing">Window Washing</option>
                 <option value="pressure_washing">Pressure Washing &amp; Soft Washing</option>
@@ -59,9 +59,10 @@ export function QuoteForm() {
                 <option value="multiple_services">Multiple Services</option>
               </select>
             </div>
-            <div className="form-field full">
-              <label htmlFor="additional-details">Additional Details (optional)</label>
+            <div className="form-field full sm:col-span-2">
+              <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="additional-details">Additional Details (optional)</label>
               <textarea
+                className="w-full resize-y rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/40"
                 id="additional-details"
                 name="additional_details"
                 rows={4}
@@ -69,14 +70,16 @@ export function QuoteForm() {
               />
             </div>
           </div>
-          <label className="consent">
-            <input type="checkbox" name="sms_consent" />
-            <span>
+          <label className="consent mt-6 flex items-start gap-3 rounded-sm border border-border bg-surface-2/50 p-4 text-xs leading-relaxed text-muted-foreground">
+            <input className="mt-1 size-4 shrink-0 accent-[#c98c1a]" type="checkbox" name="sms_consent" />
+            <span className="text-left">
               <strong style={{ color: "var(--white)" }}>(Optional)</strong> I agree to receive SMS text messages from CGA Property Services about my quote, appointment confirmations, service reminders, and review requests. Consent is not required to get a quote or service. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our Privacy Policy and Terms. We don&apos;t sell or share your mobile information with third parties for marketing.
             </span>
           </label>
-          <button type="submit" className="btn btn-primary mt-6 w-full">Submit Quote Request</button>
-          <p className="form-footer">
+          <button type="submit" className="btn btn-primary mt-6 w-full rounded-sm bg-primary px-6 py-4 font-semibold text-primary-foreground transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-surface">
+            Submit Quote Request
+          </button>
+          <p className="form-footer mt-5 text-center text-sm text-muted-foreground">
             Or call/text us directly: <a href="tel:3202009941">(320) 200-9941</a>
           </p>
         </form>
