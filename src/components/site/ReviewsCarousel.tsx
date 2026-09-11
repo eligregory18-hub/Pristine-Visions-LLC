@@ -62,7 +62,10 @@ function initials(name: string) {
 
 function ReviewCard({ review }: { review: PublicReview }) {
   return (
-    <article className="panel w-[85vw] max-w-sm shrink-0 snap-start rounded-sm border border-primary p-6 sm:w-[22rem]">
+    <article
+      className="panel w-[85vw] max-w-sm shrink-0 snap-start rounded-sm p-6 sm:w-[22rem]"
+      style={{ border: "1px solid var(--gold)" }}
+    >
       <div className="flex items-center gap-3">
         <span className="flex size-11 items-center justify-center rounded-full bg-surface-2 font-display text-lg text-primary">
           {initials(review.author)}
