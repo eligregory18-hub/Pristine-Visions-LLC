@@ -27,7 +27,7 @@ export function QuoteForm() {
         </div>
 
         <div
-          className="mx-auto rounded-sm p-px"
+          className="mx-auto rounded-sm"
           style={{ backgroundColor: "var(--primary)" }}
         >
           <form
