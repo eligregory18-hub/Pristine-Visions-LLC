@@ -29,7 +29,7 @@ export function QuoteForm() {
         <form
           className="quote-form panel mx-auto rounded-sm p-6 text-left sm:p-10"
           id="quoteForm"
-          style={{ border: "2px solid var(--gold)" }}
+          style={{ border: "1px solid var(--gold)", outline: "1px solid var(--gold)", outlineOffset: "-1px" }}
         >
           <div className="form-grid grid gap-5 sm:grid-cols-2">
             <div className="form-field">
