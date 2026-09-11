@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
 import { ReviewsCarousel } from "@/components/site/ReviewsCarousel";
+import { QuoteForm } from "@/routes/quote";
 
 const logoImg = "/pristine-visions-logo.png";
 const heroImg = "/pole-wash.png";
@@ -469,12 +470,9 @@ function Home() {
             Tell us about your property and the service you need. We&apos;ll get back to you fast,
             usually the same day.
           </p>
-          <a
-            href="/quote"
-            className="mt-8 inline-block rounded-sm bg-primary px-8 py-4 font-display text-2xl tracking-wide text-primary-foreground transition-transform hover:-translate-y-0.5"
-          >
-            Open Quote Form
-          </a>
+          <div className="mt-8 text-left">
+            <QuoteForm />
+          </div>
         </div>
       </section>
 
