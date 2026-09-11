@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { type FormEvent, useState } from "react";
 
 const services = [
   "Window Washing",
@@ -24,6 +24,34 @@ export function QuoteForm() {
     return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
   };
 
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    setSending(true);
+    setError("");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      const result = (await response.json()) as { success?: boolean };
+      if (!response.ok || !result.success) {
+        throw new Error("Form submission failed");
+      }
+
+      setSent(true);
+    } catch {
+      setError("We couldn't send your request right now. Please call (320) 200-9941 instead.");
+    } finally {
+      setSending(false);
+    }
+  };
+
   if (sent) {
     return (
       <div className="panel rounded-sm p-10 text-center">
@@ -41,35 +69,7 @@ export function QuoteForm() {
       className="panel rounded-sm p-6 sm:p-8"
       action="https://api.web3forms.com/submit"
       method="POST"
-      onSubmit={async (e) => {
-        e.preventDefault();
-        const form = e.currentTarget;
-        setSending(true);
-        setError("");
-
-        try {
-          const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-              Accept: "application/json",
-            },
-            body: new FormData(form),
-          });
-
-          const result = (await response.json()) as { success?: boolean };
-          if (!response.ok || !result.success) {
-            throw new Error("Form submission failed");
-          }
-
-          setSent(true);
-        } catch {
-          setError(
-            "We couldn't send your request right now. Please call (320) 200-9941 instead.",
-          );
-        } finally {
-          setSending(false);
-        }
-      }}
+      onSubmit={handleSubmit}
     >
       <input type="hidden" name="access_key" value="0d153575-358e-4569-9612-dacb25bd3184" />
       <input type="hidden" name="subject" value="New Pristine Visions quote request" />
