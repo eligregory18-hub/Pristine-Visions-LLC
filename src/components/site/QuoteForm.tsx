@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const services = [
   "Window Washing",
@@ -15,6 +15,24 @@ export function QuoteForm() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    const form = formRef.current;
+    if (!form) return;
+
+    const inputs = form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>(
+      'input:not([type="hidden"]), textarea',
+    );
+    const stopBeforeReactDelegation = (event: Event) => {
+      event.stopImmediatePropagation();
+    };
+
+    inputs.forEach((input) => input.addEventListener("input", stopBeforeReactDelegation));
+    return () => {
+      inputs.forEach((input) => input.removeEventListener("input", stopBeforeReactDelegation));
+    };
+  }, []);
 
   if (sent) {
     return (
@@ -30,6 +48,7 @@ export function QuoteForm() {
 
   return (
     <form
+      ref={formRef}
       className="panel rounded-sm p-6 sm:p-8"
       action="https://formspree.io/f/xbgjqqkb"
       method="POST"
