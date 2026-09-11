@@ -170,7 +170,7 @@ function Home() {
             <a href="tel:3202009941" className="text-primary">
               (320) 200-9941
             </a>
-            <a href="/quote" className="rounded-sm bg-primary px-4 py-2.5 font-display text-base tracking-wide text-primary-foreground">
+            <a href="#quote" className="rounded-sm bg-primary px-4 py-2.5 font-display text-base tracking-wide text-primary-foreground">
               Get a Free Quote
             </a>
           </nav>
@@ -201,7 +201,7 @@ function Home() {
                 (320) 200-9941
               </a>
               <a
-                href="/quote"
+                href="#quote"
                 onClick={() => setMobileMenuOpen(false)}
                 className="rounded-sm bg-primary px-4 py-3 font-display text-xl tracking-wide text-primary-foreground"
               >
@@ -237,7 +237,7 @@ function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="/quote"
+                href="#quote"
                 className="rounded-sm bg-primary px-7 py-4 font-display text-xl tracking-wide text-primary-foreground transition-transform hover:-translate-y-0.5"
               >
                 Get a Free Quote
@@ -455,6 +455,26 @@ function Home() {
               </div>
             </details>
           ))}
+        </div>
+      </section>
+
+      {/* Quote CTA */}
+      <section id="quote" className="border-y border-border bg-surface py-24">
+        <div className="mx-auto max-w-3xl px-5 text-center">
+          <p className="eyebrow">Get Started</p>
+          <h2 className="mt-3 text-5xl sm:text-6xl">
+            Request a <span className="text-primary">Free Quote</span>
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            Tell us about your property and the service you need. We&apos;ll get back to you fast,
+            usually the same day.
+          </p>
+          <a
+            href="/quote"
+            className="mt-8 inline-block rounded-sm bg-primary px-8 py-4 font-display text-2xl tracking-wide text-primary-foreground transition-transform hover:-translate-y-0.5"
+          >
+            Open Quote Form
+          </a>
         </div>
       </section>
 
