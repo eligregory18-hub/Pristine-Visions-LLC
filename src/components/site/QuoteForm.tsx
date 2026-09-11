@@ -1,4 +1,4 @@
-import { type ChangeEvent, type FormEvent, useLayoutEffect, useRef, useState } from "react";
+import { type FormEvent, useRef, useState } from "react";
 
 const services = [
   "Window Washing",
@@ -15,44 +15,7 @@ export function QuoteForm() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
-  const [phone, setPhone] = useState("");
-  const [phoneCaret, setPhoneCaret] = useState<number | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
-  const phoneInputRef = useRef<HTMLInputElement>(null);
-
-  const formatPhone = (value: string) => {
-    const digits = value.replace(/\D/g, "").slice(0, 10);
-    if (digits.length <= 3) return digits;
-    if (digits.length <= 6) return `${digits.slice(0, 3)}-${digits.slice(3)}`;
-    return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
-  };
-
-  useLayoutEffect(() => {
-    if (phoneCaret !== null) {
-      phoneInputRef.current?.setSelectionRange(phoneCaret, phoneCaret);
-    }
-  }, [phone, phoneCaret]);
-
-  const handlePhoneChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const raw = event.target.value;
-    const cursorPos = event.target.selectionStart ?? raw.length;
-    const digitsBeforeCursor = raw.slice(0, cursorPos).replace(/\D/g, "").length;
-    const formatted = formatPhone(raw);
-    let newCaret = formatted.length;
-    let seenDigits = 0;
-
-    for (let index = 0; index < formatted.length; index += 1) {
-      if (/\d/.test(formatted[index])) seenDigits += 1;
-      if (seenDigits === digitsBeforeCursor) {
-        newCaret = index + 1;
-        break;
-      }
-    }
-    if (digitsBeforeCursor === 0) newCaret = 0;
-
-    setPhone(formatted);
-    setPhoneCaret(newCaret);
-  };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -131,7 +94,6 @@ export function QuoteForm() {
             Phone Number
           </span>
           <input
-            ref={phoneInputRef}
             required
             aria-required="true"
             type="tel"
@@ -142,8 +104,6 @@ export function QuoteForm() {
             className={field}
             placeholder="320-200-9941"
             name="phone"
-            value={phone}
-            onChange={handlePhoneChange}
           />
         </label>
         <label className="block">
