@@ -73,7 +73,7 @@ export function QuoteForm() {
           <label className="consent mt-6 flex items-start gap-3 rounded-sm border border-border bg-surface-2/50 p-4 text-xs leading-relaxed text-muted-foreground">
             <input className="mt-1 size-4 shrink-0 accent-[#c98c1a]" type="checkbox" name="sms_consent" />
             <span className="text-left">
-              <strong style={{ color: "var(--white)" }}>(Optional)</strong> I agree to receive SMS text messages from CGA Property Services about my quote, appointment confirmations, service reminders, and review requests. Consent is not required to get a quote or service. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our Privacy Policy and Terms. We don&apos;t sell or share your mobile information with third parties for marketing.
+              <strong style={{ color: "var(--white)" }}>(Optional)</strong> I agree to receive SMS text messages from Pristine Visions LLC about my quote, appointment confirmations, service reminders, and review requests. Consent is not required to get a quote or service. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our Privacy Policy and Terms. We don&apos;t sell or share your mobile information with third parties for marketing.
             </span>
           </label>
           <button type="submit" className="btn btn-primary mt-6 w-full rounded-sm bg-primary px-6 py-4 font-semibold text-primary-foreground transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-surface">
