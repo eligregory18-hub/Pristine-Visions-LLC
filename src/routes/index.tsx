@@ -417,6 +417,9 @@ function Home() {
         <div className="mx-auto max-w-7xl px-5 text-center">
           <p className="eyebrow">Where We Work</p>
           <h2 className="mt-3 text-5xl sm:text-6xl">Service Area</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            Not sure if we cover your area? Give us a call and we&apos;ll let you know.
+          </p>
           <div className="mx-auto mt-10 max-w-5xl">
             <div className="grid gap-10 md:grid-cols-2">
             <div>
