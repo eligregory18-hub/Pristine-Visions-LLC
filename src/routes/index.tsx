@@ -131,7 +131,7 @@ const faqs = [
   },
   {
     q: "Are you licensed and insured?",
-    a: "We serve Lincoln, NE | Omaha, NE | Spicer, MN | New London, MN | Alexandria, MN | Sauk Center, MN | Willmar, MN and surrounding communities. Not sure if we cover your area? Give us a call.",
+    a: "Yes. Pristine Visions LLC is licensed and fully insured, so you can feel confident that your property is in professional and protected hands.",
   },
   {
     q: "Is Ceramic Window Coating worth it?",
