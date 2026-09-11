@@ -391,7 +391,7 @@ function Home() {
             </div>
           </div>
           <div>
-            <p className="eyebrow">Why Pristine Visions</p>
+            <p className="eyebrow text-sm">Why Pristine Visions</p>
             <h2 className="mt-3 text-5xl sm:text-6xl">
               Reliable, Local &amp; <span className="text-primary">Professional</span>
             </h2>
