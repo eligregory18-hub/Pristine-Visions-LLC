@@ -465,6 +465,8 @@ function Home() {
         </div>
       </section>
 
+      <QuoteForm />
+
       {/* FAQ */}
       <section id="faq" className="mx-auto max-w-3xl px-5 py-24">
         <div className="text-center">
@@ -490,8 +492,6 @@ function Home() {
           ))}
         </div>
       </section>
-
-      <QuoteForm />
 
       <footer className="border-t border-border bg-surface py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 text-xs text-muted-foreground sm:flex-row">
