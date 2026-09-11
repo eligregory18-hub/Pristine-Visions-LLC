@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
-import { QuoteForm } from "@/components/site/QuoteForm";
 import { ReviewsCarousel } from "@/components/site/ReviewsCarousel";
 
 const logoImg = "/pristine-visions-logo.png";
@@ -171,12 +170,6 @@ function Home() {
             <a href="tel:3202009941" className="text-primary">
               (320) 200-9941
             </a>
-            <a
-              href="#quote"
-              className="rounded-sm bg-primary px-4 py-2.5 font-display text-base tracking-wide text-primary-foreground"
-            >
-              Free Quote
-            </a>
           </nav>
           <button
             type="button"
@@ -203,13 +196,6 @@ function Home() {
               ))}
               <a href="tel:3202009941" className="py-4 text-primary">
                 (320) 200-9941
-              </a>
-              <a
-                href="#quote"
-                onClick={() => setMobileMenuOpen(false)}
-                className="rounded-sm bg-primary px-4 py-3 font-display text-xl tracking-wide text-primary-foreground"
-              >
-                Free Quote
               </a>
             </div>
           </nav>
@@ -240,12 +226,6 @@ function Home() {
               gutter cleaning — residential and commercial.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#quote"
-                className="rounded-sm bg-primary px-7 py-4 font-display text-xl tracking-wide text-primary-foreground transition-transform hover:-translate-y-0.5"
-              >
-                Get a Free Quote
-              </a>
               <a
                 href="tel:3202009941"
                 className="rounded-sm border border-border px-7 py-4 font-display text-xl tracking-wide hover:bg-surface"
@@ -459,22 +439,6 @@ function Home() {
               </div>
             </details>
           ))}
-        </div>
-      </section>
-
-      {/* Quote */}
-      <section id="quote" className="mx-auto max-w-3xl px-5 py-24">
-        <div className="text-center">
-          <p className="eyebrow">Get Started</p>
-          <h2 className="mt-3 text-5xl sm:text-6xl">
-            Request a <span className="text-primary">Free Quote</span>
-          </h2>
-          <p className="mt-4 text-sm text-muted-foreground">
-            Fill out the form and we&apos;ll get back to you fast — usually the same day.
-          </p>
-        </div>
-        <div className="mt-10">
-          <QuoteForm />
         </div>
       </section>
 
