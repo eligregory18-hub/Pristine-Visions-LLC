@@ -26,14 +26,14 @@ export function QuoteForm() {
           <p className="lead">Fill out the form and we&apos;ll get back to you fast — usually the same day.</p>
         </div>
 
-        <form
-          className="quote-form panel mx-auto rounded-sm p-6 text-left sm:p-10"
-          id="quoteForm"
-          style={{
-            border: "1px solid var(--gold)",
-            boxShadow: "0 0 0 1px var(--gold), var(--shadow-panel)",
-          }}
+        <div
+          className="mx-auto rounded-sm p-px"
+          style={{ backgroundColor: "var(--gold)" }}
         >
+          <form
+            className="quote-form panel rounded-sm p-6 text-left sm:p-10"
+            id="quoteForm"
+          >
           <div className="form-grid grid gap-5 sm:grid-cols-2">
             <div className="form-field">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="first-name">First Name*</label>
@@ -85,7 +85,8 @@ export function QuoteForm() {
           <p className="form-footer mt-5 text-center text-sm text-muted-foreground">
             Or call/text us directly: <a href="tel:3202009941">(320) 200-9941</a>
           </p>
-        </form>
+          </form>
+        </div>
 
         <div className="sent-panel panel" id="sentPanel" style={{ display: "none" }}>
           <h3>Request received</h3>
