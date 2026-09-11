@@ -26,7 +26,11 @@ export function QuoteForm() {
           <p className="lead">Fill out the form and we&apos;ll get back to you fast — usually the same day.</p>
         </div>
 
-        <form className="quote-form panel mx-auto rounded-sm border-2 border-primary p-6 text-left sm:p-10" id="quoteForm">
+        <form
+          className="quote-form panel mx-auto rounded-sm p-6 text-left sm:p-10"
+          id="quoteForm"
+          style={{ border: "2px solid var(--gold)" }}
+        >
           <div className="form-grid">
             <div className="form-field">
               <label htmlFor="first-name">First Name*</label>
