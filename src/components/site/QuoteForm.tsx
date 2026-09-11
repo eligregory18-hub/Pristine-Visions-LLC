@@ -1,4 +1,4 @@
-import { type FormEvent, useRef, useState } from "react";
+import { useState } from "react";
 
 const services = [
   "Window Washing",
@@ -15,48 +15,6 @@ export function QuoteForm() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
-  const formRef = useRef<HTMLFormElement>(null);
-  const stopInputPropagation = (event: FormEvent<HTMLElement>) => {
-    event.stopPropagation();
-  };
-
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const form = formRef.current;
-    if (!form) {
-      setError("We couldn't send your request right now. Please call (320) 200-9941 instead.");
-      return;
-    }
-
-    setSending(true);
-    setError("");
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 15000);
-
-    try {
-      const formData = new FormData(form);
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-        },
-        body: formData,
-        signal: controller.signal,
-      });
-
-      const result = (await response.json()) as { success?: boolean };
-      if (!response.ok || !result.success) {
-        throw new Error("Form submission failed");
-      }
-
-      setSent(true);
-    } catch {
-      setError("We couldn't send your request right now. Please call (320) 200-9941 instead.");
-    } finally {
-      clearTimeout(timeout);
-      setSending(false);
-    }
-  };
 
   if (sent) {
     return (
@@ -72,84 +30,69 @@ export function QuoteForm() {
 
   return (
     <form
-      ref={formRef}
       className="panel rounded-sm p-6 sm:p-8"
-      onSubmit={handleSubmit}
+      action="https://formspree.io/f/xbgjqqkb"
+      method="POST"
+      onSubmit={async (e) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        setSending(true);
+        setError("");
+
+        try {
+          const response = await fetch("https://formspree.io/f/xbgjqqkb", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+            },
+            body: new FormData(form),
+          });
+
+          if (!response.ok) {
+            throw new Error("Form submission failed");
+          }
+
+          setSent(true);
+        } catch {
+          setError(
+            "We couldn't send your request right now. Please call (320) 200-9941 instead.",
+          );
+        } finally {
+          setSending(false);
+        }
+      }}
     >
-      <input type="hidden" name="access_key" value="0d153575-358e-4569-9612-dacb25bd3184" />
-      <input type="hidden" name="subject" value="New Pristine Visions quote request" />
-      <input type="hidden" name="from_name" value="Pristine Visions website quote form" />
-      <input
-        type="checkbox"
-        name="botcheck"
-        className="hidden"
-        tabIndex={-1}
-        autoComplete="off"
-        aria-hidden="true"
-      />
+      <input type="hidden" name="_subject" value="New Pristine Visions quote request" />
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             First Name
           </span>
-          <input
-            required
-            aria-required="true"
-            className={field}
-            placeholder="Jane"
-            name="first"
-            onInput={stopInputPropagation}
-          />
+          <input required className={field} placeholder="Jane" name="first" />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Last Name
           </span>
-          <input
-            required
-            aria-required="true"
-            className={field}
-            placeholder="Doe"
-            name="last"
-            onInput={stopInputPropagation}
-          />
+          <input required className={field} placeholder="Doe" name="last" />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Phone Number
           </span>
-          <input
-            required
-            aria-required="true"
-            type="tel"
-            inputMode="numeric"
-            autoComplete="tel"
-            maxLength={12}
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            className={field}
-            placeholder="320-200-9941"
-            name="phone"
-            onInput={stopInputPropagation}
-          />
+          <input required type="tel" className={field} placeholder="320-200-9941" name="phone" />
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             City
           </span>
-          <input
-            required
-            aria-required="true"
-            className={field}
-            placeholder="Lincoln"
-            name="city"
-            onInput={stopInputPropagation}
-          />
+          <input required className={field} placeholder="Lincoln" name="city" />
         </label>
         <label className="block sm:col-span-2">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Service Needed
           </span>
-          <select required aria-required="true" className={field} name="service" defaultValue="">
+          <select required className={field} name="service" defaultValue="">
             <option value="" disabled>
               Select a service...
             </option>
@@ -169,7 +112,6 @@ export function QuoteForm() {
             className={field}
             name="details"
             placeholder="Number of windows, square footage, timing..."
-            onInput={stopInputPropagation}
           />
         </label>
       </div>
