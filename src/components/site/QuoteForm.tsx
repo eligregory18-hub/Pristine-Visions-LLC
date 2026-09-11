@@ -33,11 +33,11 @@ export function QuoteForm() {
       return;
     }
 
-    const formData = new FormData(form);
     setSending(true);
     setError("");
 
     try {
+      const formData = new FormData(form);
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
