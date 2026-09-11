@@ -1,4 +1,11 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+
+function formatPhoneNumber(value: string) {
+  const digits = value.replace(/\D/g, "").slice(0, 10);
+  const parts = [digits.slice(0, 3), digits.slice(3, 6), digits.slice(6, 10)].filter(Boolean);
+  return parts.join("-");
+}
 
 export const Route = createFileRoute("/quote")({
   head: () => ({
@@ -15,6 +22,8 @@ export const Route = createFileRoute("/quote")({
 });
 
 export function QuoteForm({ showHeader = true }: { showHeader?: boolean }) {
+  const [phone, setPhone] = useState("");
+
   return (
     <section id="quote" className="border-y border-border bg-surface py-24">
       <div className="mx-auto max-w-3xl px-5">
@@ -47,11 +56,11 @@ export function QuoteForm({ showHeader = true }: { showHeader?: boolean }) {
             </div>
             <div className="form-field">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="phone-number">Phone Number*</label>
-              <input className="quote-input w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="tel" id="phone-number" name="phone_number" placeholder="620-000-0000" required />
+              <input className="quote-input w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="tel" id="phone-number" name="phone_number" placeholder="000-000-0000" required value={phone} onChange={(e) => setPhone(formatPhoneNumber(e.target.value))} inputMode="numeric" maxLength={12} />
             </div>
             <div className="form-field">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="city">City*</label>
-              <input className="quote-input w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="text" id="city" name="city" placeholder="McPherson" required />
+              <input className="quote-input w-full rounded-sm border border-input bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none" type="text" id="city" name="city" placeholder="Lincoln" required />
             </div>
             <div className="form-field full sm:col-span-2">
               <label className="mb-2 block text-sm font-semibold text-foreground" htmlFor="service-needed">Service Needed*</label>
