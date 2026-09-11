@@ -107,6 +107,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  // The production build (vite.static.config.ts) mounts client-side into the
+  // pre-existing <div id="root"> from index.html via createRoot — there is no
+  // real SSR document render happening. If we still render <html>/<body> here,
+  // React ends up nesting a second <html>/<body> inside the real ones, which
+  // the browser's HTML parser silently "fixes" by re-parenting things. That
+  // desyncs React's tree from the actual DOM and triggers a known React 19 bug
+  // where focusing any input spins into an infinite loop and freezes the page.
+  // Only render the full document shell when there isn't already a mounted
+  // #root container (i.e. genuine SSR, where this component renders the
+  // entire document from scratch).
+  if (typeof document !== "undefined" && document.getElementById("root")) {
+    return (
+      <>
+        <HeadContent />
+        {children}
+        <Scripts />
+      </>
+    );
+  }
+
   return (
     <html lang="en">
       <head>
