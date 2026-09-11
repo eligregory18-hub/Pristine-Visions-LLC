@@ -1,4 +1,4 @@
-import { type FormEvent, useState } from "react";
+import { type FormEvent, useRef, useState } from "react";
 
 const services = [
   "Window Washing",
@@ -16,6 +16,7 @@ export function QuoteForm() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
   const [phone, setPhone] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
 
   const formatPhone = (value: string) => {
     const digits = value.replace(/\D/g, "").slice(0, 10);
@@ -26,7 +27,13 @@ export function QuoteForm() {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const form = formRef.current;
+    if (!form) {
+      setError("We couldn't send your request right now. Please call (320) 200-9941 instead.");
+      return;
+    }
+
+    const formData = new FormData(form);
     setSending(true);
     setError("");
 
@@ -66,9 +73,8 @@ export function QuoteForm() {
 
   return (
     <form
+      ref={formRef}
       className="panel rounded-sm p-6 sm:p-8"
-      action="https://api.web3forms.com/submit"
-      method="POST"
       onSubmit={handleSubmit}
     >
       <input type="hidden" name="access_key" value="0d153575-358e-4569-9612-dacb25bd3184" />
