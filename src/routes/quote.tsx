@@ -14,17 +14,19 @@ export const Route = createFileRoute("/quote")({
   component: QuotePage,
 });
 
-export function QuoteForm() {
+export function QuoteForm({ showHeader = true }: { showHeader?: boolean }) {
   return (
     <section id="quote" className="border-y border-border bg-surface py-24">
       <div className="mx-auto max-w-3xl px-5">
-        <div className="section-head text-center">
-          <p className="eyebrow">Get Started</p>
-          <h2 className="text-5xl sm:text-6xl" style={{ marginTop: 12 }}>
-            Request a <span style={{ color: "var(--primary)" }}>Free Quote</span>
-          </h2>
-          <p className="lead">Fill out the form and we&apos;ll get back to you fast — usually the same day.</p>
-        </div>
+        {showHeader ? (
+          <div className="section-head text-center">
+            <p className="eyebrow">Get Started</p>
+            <h2 className="text-5xl sm:text-6xl" style={{ marginTop: 12 }}>
+              Request a <span style={{ color: "var(--primary)" }}>Free Quote</span>
+            </h2>
+            <p className="lead">Fill out the form and we&apos;ll get back to you fast — usually the same day.</p>
+          </div>
+        ) : null}
 
         <form
           className="quote-form panel mx-auto rounded-sm p-6 text-left sm:p-10"
@@ -114,7 +116,7 @@ function QuotePage() {
           </p>
         </div>
 
-        <QuoteForm />
+        <QuoteForm showHeader={false} />
       </div>
     </main>
   );
