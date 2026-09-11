@@ -245,7 +245,7 @@ function Home() {
               </a>
               <a
                 href="tel:3202009941"
-                className="rounded-sm border border-border px-7 py-4 font-display text-xl tracking-wide hover:bg-surface"
+                className="rounded-sm border border-primary px-7 py-4 font-display text-xl tracking-wide hover:bg-surface"
               >
                 Call (320) 200-9941
               </a>
@@ -316,7 +316,7 @@ function Home() {
                   {s.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-sm bg-surface-2 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+                      className="rounded-sm border border-primary bg-surface-2 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
                     >
                       {t}
                     </span>
