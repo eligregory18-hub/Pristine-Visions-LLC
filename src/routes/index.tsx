@@ -361,7 +361,7 @@ function Home() {
               href={FACEBOOK_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-sm border border-border px-6 py-3 font-display text-xl tracking-wide hover:bg-surface-2"
+              className="rounded-sm border border-primary px-6 py-3 font-display text-xl tracking-wide hover:bg-surface-2"
             >
               Follow Us on Facebook
             </a>
