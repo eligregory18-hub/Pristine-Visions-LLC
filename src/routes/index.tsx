@@ -435,6 +435,8 @@ function Home() {
                     {a}
                   </span>
                 ))}
+              </div>
+              <div className="mt-3 flex justify-center">
                 <span className="rounded-sm border border-border bg-background px-5 py-3 font-display text-xl tracking-wide">
                   Surrounding Areas
                 </span>
