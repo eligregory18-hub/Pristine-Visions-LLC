@@ -420,9 +420,10 @@ function Home() {
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             Serving in Lincoln, NE | Omaha, NE | Spicer, MN | New London, MN | Alexandria, MN | Sauk Center, MN | Willmar, MN | and surrounding communities. Not sure if we cover your area? Give us a call and we&apos;ll let you know.
           </p>
-          <div className="mx-auto mt-10 max-w-3xl space-y-8">
+          <div className="mx-auto mt-10 max-w-5xl">
+            <div className="grid gap-10 md:grid-cols-2">
             <div>
-              <h3 className="text-2xl font-semibold underline decoration-primary decoration-2 underline-offset-8">
+              <h3 className="text-5xl underline decoration-primary decoration-2 underline-offset-8 sm:text-6xl">
                 Nebraska
               </h3>
               <div className="mt-5 flex flex-wrap justify-center gap-3">
@@ -437,7 +438,7 @@ function Home() {
               </div>
             </div>
             <div>
-              <h3 className="text-2xl font-semibold underline decoration-primary decoration-2 underline-offset-8">
+              <h3 className="text-5xl underline decoration-primary decoration-2 underline-offset-8 sm:text-6xl">
                 Minnesota
               </h3>
               <div className="mt-5 flex flex-wrap justify-center gap-3">
@@ -450,6 +451,7 @@ function Home() {
                   </span>
                 ))}
               </div>
+            </div>
             </div>
             <div>
               <div className="flex flex-wrap justify-center gap-3">
