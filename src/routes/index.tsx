@@ -135,7 +135,7 @@ const faqs = [
   },
   {
     q: "Is Ceramic Window Coating worth it?",
-    a: "Absolutely. Our Ceramic Coating bonds to exterior glass and helps repel rain, hard water, and stains for up to 12 months. It's bundled deal with any window cleaning!",
+    a: "Absolutely! Our ceramic coating bonds to exterior glass, helping repel rain, hard water, and stains for up to 12 months. You can also bundle it with any window cleaning service for a discounted price on both services.",
   },
   {
     q: "Do you do commercial work?",
