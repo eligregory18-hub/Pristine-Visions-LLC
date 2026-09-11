@@ -76,6 +76,14 @@ export function QuoteForm() {
       <input type="hidden" name="access_key" value="0d153575-358e-4569-9612-dacb25bd3184" />
       <input type="hidden" name="subject" value="New Pristine Visions quote request" />
       <input type="hidden" name="from_name" value="Pristine Visions website quote form" />
+      <input
+        type="checkbox"
+        name="botcheck"
+        className="hidden"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
