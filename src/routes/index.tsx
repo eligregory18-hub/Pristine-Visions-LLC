@@ -435,6 +435,9 @@ function Home() {
                     {a}
                   </span>
                 ))}
+                <span className="rounded-sm border border-border bg-background px-5 py-3 font-display text-xl tracking-wide">
+                  Surrounding Areas
+                </span>
               </div>
             </div>
             <div>
@@ -450,12 +453,8 @@ function Home() {
                     {a}
                   </span>
                 ))}
-              </div>
-            </div>
-            <div className="md:col-span-2">
-              <div className="flex flex-wrap justify-center gap-3">
                 <span className="rounded-sm border border-border bg-background px-5 py-3 font-display text-xl tracking-wide">
-                  {areas[7]}
+                  Surrounding Areas
                 </span>
               </div>
             </div>
