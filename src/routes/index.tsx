@@ -123,7 +123,7 @@ const badges = [
 const faqs = [
   {
     q: "How do you clean windows without leaving streaks?",
-    a: "We use a professional water-fed pole connected to a RO/DI system with 0 TDS purified water. Leaving your windows spotless, streak-free glass, with no residue that dries crystal clear.",
+    a: "We use a professional water-fed pole connected to a RO/DI system that purifies water to 0 TDS. Leaving your windows spotless, streak-free glass, with no residue that dries crystal clear",
   },
   {
     q: "Do you offer free estimates?",
