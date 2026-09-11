@@ -130,7 +130,7 @@ const faqs = [
     a: "Yes. Every quote request is free, with no obligation. Just fill out the form or call/text us at (320) 200-9941 and we'll get back to you quickly, usually the same day.",
   },
   {
-    q: "What areas do you serve?",
+    q: "Are you licensed and insured?",
     a: "We serve Lincoln, NE | Omaha, NE | Spicer, MN | New London, MN | Alexandria, MN | Sauk Center, MN | Willmar, MN and surrounding communities. Not sure if we cover your area? Give us a call.",
   },
   {
