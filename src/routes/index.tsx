@@ -123,19 +123,19 @@ const badges = [
 const faqs = [
   {
     q: "How do you clean windows without leaving streaks?",
-    a: "We use a professional water-fed pole system with 0 TDS purified water. No soap, no chemicals, no residue — just spotless, streak-free glass that dries crystal clear.",
+    a: "We use a professional water-fed pole connected to a RO/DI system that purifies water to 0 TDS. Resulting in crystal clear windows that are spotless, streak-free & no leftover soap or residue!",
   },
   {
     q: "Do you offer free estimates?",
     a: "Yes. Every quote request is free, with no obligation. Just fill out the form or call/text us at (320) 200-9941 and we'll get back to you quickly, usually the same day.",
   },
   {
-    q: "What areas do you serve?",
-    a: "We serve Lincoln, NE | Omaha, NE | Spicer, MN | New London, MN | Alexandria, MN | Sauk Center, MN | Willmar, MN and surrounding communities. Not sure if we cover your area? Give us a call.",
+    q: "Are you licensed and insured?",
+    a: "Yes. Pristine Visions LLC is licensed and fully insured, so you can feel confident that your property is in professional and protected hands.",
   },
   {
     q: "Is Ceramic Window Coating worth it?",
-    a: "Absolutely. Our hydrophobic coating bonds to exterior glass and helps repel rain, hard water, and stains for up to 12 months. It's a great add-on with any window cleaning.",
+    a: "Absolutely! Our ceramic coating bonds to exterior glass, helping repel rain, hard water, and stains for up to 12 months. You can also bundle it with any window cleaning service for a discounted price on both services.",
   },
   {
     q: "Do you do commercial work?",
@@ -245,7 +245,7 @@ function Home() {
               </a>
               <a
                 href="tel:3202009941"
-                className="rounded-sm border border-border px-7 py-4 font-display text-xl tracking-wide hover:bg-surface"
+                className="rounded-sm border border-primary px-7 py-4 font-display text-xl tracking-wide hover:bg-surface"
               >
                 Call (320) 200-9941
               </a>
@@ -316,7 +316,7 @@ function Home() {
                   {s.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-sm bg-surface-2 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+                      className="rounded-sm border border-primary bg-surface-2 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
                     >
                       {t}
                     </span>
@@ -361,7 +361,7 @@ function Home() {
               href={FACEBOOK_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-sm border border-border px-6 py-3 font-display text-xl tracking-wide hover:bg-surface-2"
+              className="rounded-sm border border-primary px-6 py-3 font-display text-xl tracking-wide hover:bg-surface-2"
             >
               Follow Us on Facebook
             </a>
@@ -391,14 +391,14 @@ function Home() {
             </div>
           </div>
           <div>
-            <p className="eyebrow">Why Pristine Visions</p>
+            <p className="eyebrow text-sm">Why Pristine Visions</p>
             <h2 className="mt-3 text-5xl sm:text-6xl">
-              Reliable, <span className="text-primary">Professional</span> & Local
+              Reliable, Local &amp; <span className="text-primary">Professional</span>
             </h2>
             <div className="mt-10 space-y-8">
               {reasons.map((r) => (
                 <div key={r.title} className="flex gap-5">
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-sm bg-surface-2 text-xl">
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-sm border border-primary bg-surface-2 text-xl">
                     {r.icon}
                   </span>
                   <div>
@@ -412,23 +412,57 @@ function Home() {
         </div>
       </section>
 
+      <QuoteForm />
+
       {/* Service area */}
       <section id="area" className="border-y border-border bg-surface py-24">
         <div className="mx-auto max-w-7xl px-5 text-center">
           <p className="eyebrow">Where We Work</p>
           <h2 className="mt-3 text-5xl sm:text-6xl">Service Area</h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Serving in Lincoln, NE | Omaha, NE | Spicer, MN | New London, MN | Alexandria, MN | Sauk Center, MN | Willmar, MN | and surrounding communities. Not sure if we cover your area? Give us a call and we&apos;ll let you know.
+            Not sure if we cover your area? Give us a call and we&apos;ll let you know.
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
-            {areas.map((a) => (
-              <span
-                key={a}
-                className="rounded-sm border border-border bg-background px-5 py-3 font-display text-xl tracking-wide"
-              >
-                {a}
-              </span>
-            ))}
+          <div className="mx-auto mt-10 max-w-5xl">
+            <div className="grid gap-10 md:grid-cols-2">
+              <div>
+                <h3 className="text-3xl underline decoration-primary decoration-2 underline-offset-8 sm:text-4xl">
+                  Nebraska
+                </h3>
+                <div className="mt-5 flex flex-wrap justify-center gap-3">
+                  {areas.slice(0, 2).map((a) => (
+                    <span
+                      key={a}
+                      className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide"
+                    >
+                      {a}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-3 flex justify-center">
+                  <span className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide">
+                    Surrounding Areas
+                  </span>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-3xl underline decoration-primary decoration-2 underline-offset-8 sm:text-4xl">
+                  Minnesota
+                </h3>
+                <div className="mt-5 flex flex-wrap justify-center gap-3">
+                  {areas.slice(2, 7).map((a) => (
+                    <span
+                      key={a}
+                      className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide"
+                    >
+                      {a}
+                    </span>
+                  ))}
+                  <span className="rounded-sm border border-primary bg-background px-5 py-3 font-display text-xl tracking-wide">
+                    Surrounding Areas
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -456,23 +490,6 @@ function Home() {
               </div>
             </details>
           ))}
-        </div>
-      </section>
-
-      {/* Quote CTA */}
-      <section id="quote" className="border-y border-border bg-surface py-24">
-        <div className="mx-auto max-w-3xl px-5 text-center">
-          <p className="eyebrow">Get Started</p>
-          <h2 className="mt-3 text-5xl sm:text-6xl">
-            Request a <span className="text-primary">Free Quote</span>
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Tell us about your property and the service you need. We&apos;ll get back to you fast,
-            usually the same day.
-          </p>
-          <div className="mt-8 text-left">
-            <QuoteForm />
-          </div>
         </div>
       </section>
 
