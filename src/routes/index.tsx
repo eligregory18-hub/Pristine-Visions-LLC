@@ -398,7 +398,7 @@ function Home() {
             <div className="mt-10 space-y-8">
               {reasons.map((r) => (
                 <div key={r.title} className="flex gap-5">
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-sm bg-surface-2 text-xl">
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-sm border border-primary bg-surface-2 text-xl">
                     {r.icon}
                   </span>
                   <div>
