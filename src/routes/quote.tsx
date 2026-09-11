@@ -29,11 +29,8 @@ export function QuoteForm() {
   return (
     <form
       className="rounded-sm border border-primary bg-surface p-6 shadow-[var(--shadow-panel)] sm:p-10"
-      action="https://formspree.io/f/xbgjqqkb"
-      method="POST"
+      onSubmit={(event) => event.preventDefault()}
     >
-      <input type="hidden" name="_subject" value="New Pristine Visions quote request" />
-      <input type="hidden" name="_next" value="https://pristinevisionsllc.com/quote?sent=1" />
 
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="block">
