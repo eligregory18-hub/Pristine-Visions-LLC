@@ -6,6 +6,7 @@ import { QuoteForm } from "@/routes/quote";
 
 const logoImg = "/pristine-visions-logo.png";
 const heroImg = "/pole-wash.png";
+const heroPhotoImg = "/hero-photo.png";
 const pressureImg = "/ba-deck.png";
 const gutterCleaningImg = "/gutter-cleaning.png";
 const lakeHomeImg = "/lake-home.png";
@@ -269,7 +270,7 @@ function Home() {
             <div className="absolute -inset-2 hidden border border-primary lg:block" />
             <div className="relative aspect-[5/4] overflow-hidden shadow-[var(--shadow-panel)]">
               <img
-                src={heroImg}
+                src={heroPhotoImg}
                 alt="Technician washing second-story windows with a water-fed pole"
                 width={1200}
                 height={1408}
