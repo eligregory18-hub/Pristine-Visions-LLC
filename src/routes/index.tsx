@@ -64,14 +64,14 @@ const services = [
     n: "02",
     title: "Pressure Washing & Soft Washing",
     img: pressureImg,
-    body: "Years of grime lifted off driveways, patios, siding and brick with a 4400 PSI commercial-grade machine. Big difference in a single visit.",
+    body: "Years of grime lifted off driveways, patios, siding, and brick with a 4400 PSI commercial-grade machine. You will see a night & day difference in a single visit.",
     tags: ["Driveways", "Siding", "Patios", "Brick"],
   },
   {
     n: "03",
-    title: "Screen & Gutter Cleaning",
+    title: "Gutter Cleaning",
     img: gutterCleaningImg,
-    body: "We remove, deep clean and reinstall every screen, then clear gutters so water flows freely. Often bundled with window washing.",
+    body: "We remove ALL debris to keep gutters flowing properly and help protect your home from overflow and water damage.",
     tags: ["Screen Removal", "Deep Clean", "Gutter Clearing"],
   },
   {
